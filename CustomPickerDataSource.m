@@ -1,11 +1,9 @@
-/** Cycle Atlanta, Copyright 2012, 2013 Georgia Institute of Technology
- *                                    Atlanta, GA. USA
+/** Reno Tracks, Copyright 2012, 2013 Hack4Reno
  *
- *   @author Christopher Le Dantec <ledantec@gatech.edu>
- *   @author Anhong Guo <guoanhong@gatech.edu>
+ *   @author Brad.Hellyar <bradhellyar@gmail.com>
  *
- *   Updated/Modified for Atlanta's app deployment. Based on the
- *   CycleTracks codebase for SFCTA.
+ *   Updated/Modified for Reno, Nevada app deployment. Based on the
+ *   CycleTracks codebase for SFCTA, and the Atlanta Cycle app repo.
  *
  ** CycleTracks, Copyright 2009,2010 San Francisco County Transportation Authority
  *                                    San Francisco, CA, USA
@@ -339,15 +337,18 @@
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row
 		  forComponent:(NSInteger)component reusingView:(UIView *)view
 {
+    //fix for sutom pickerview in ioOS7
+    // self.customPickerArrayis an array of UIImageView objects
     UIView * myView = [self.customPickerArray objectAtIndex:row];
     
+    // first convert to a UIImage
     UIGraphicsBeginImageContextWithOptions(myView.bounds.size, NO, 0);
     
     [myView.layer renderInContext:UIGraphicsGetCurrentContext()];
     
     UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+    // then convert back to a UIImageView and return it
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
     return imageView;

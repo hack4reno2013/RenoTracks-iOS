@@ -1,11 +1,9 @@
-/** Cycle Atlanta, Copyright 2012, 2013 Georgia Institute of Technology
- *                                    Atlanta, GA. USA
+/** Reno Tracks, Copyright 2012, 2013 Hack4Reno
  *
- *   @author Christopher Le Dantec <ledantec@gatech.edu>
- *   @author Anhong Guo <guoanhong@gatech.edu>
+ *   @author Brad.Hellyar <bradhellyar@gmail.com>
  *
- *   Updated/Modified for Atlanta's app deployment. Based on the
- *   CycleTracks codebase for SFCTA.
+ *   Updated/Modified for Reno, Nevada app deployment. Based on the
+ *   CycleTracks codebase for SFCTA, and the Atlanta Cycle app repo.
  *
  ** CycleTracks, Copyright 2009,2010 San Francisco County Transportation Authority
  *                                    San Francisco, CA, USA
@@ -83,7 +81,7 @@
 	CGRect frame = CGRectMake( 152, 7, 138, 29 );
 	UITextField *textField = [[UITextField alloc] initWithFrame:frame];
 	textField.borderStyle = UITextBorderStyleRoundedRect;
-	textField.textAlignment = UITextAlignmentRight;
+	textField.textAlignment = NSTextAlignmentRight;
 	textField.placeholder = @"Choose one";
 	textField.delegate = self;
 	return textField;
@@ -94,7 +92,7 @@
 	CGRect frame = CGRectMake( 152, 7, 138, 29 );
 	UITextField *textField = [[UITextField alloc] initWithFrame:frame];
 	textField.borderStyle = UITextBorderStyleRoundedRect;
-	textField.textAlignment = UITextAlignmentRight;
+	textField.textAlignment = NSTextAlignmentRight;
 	textField.placeholder = @"Choose one";
 	textField.delegate = self;
 	return textField;
@@ -107,7 +105,7 @@
 	UITextField *textField = [[UITextField alloc] initWithFrame:frame];
 	textField.autocapitalizationType = UITextAutocapitalizationTypeNone,
 	textField.borderStyle = UITextBorderStyleRoundedRect;
-	textField.textAlignment = UITextAlignmentRight;
+	textField.textAlignment = NSTextAlignmentRight;
 	textField.placeholder = @"name@domain";
 	textField.keyboardType = UIKeyboardTypeEmailAddress;
 	textField.returnKeyType = UIReturnKeyDone;
@@ -121,7 +119,7 @@
 	CGRect frame = CGRectMake( 152, 7, 138, 29 );
 	UITextField *textField = [[UITextField alloc] initWithFrame:frame];
 	textField.borderStyle = UITextBorderStyleRoundedRect;
-	textField.textAlignment = UITextAlignmentRight;
+	textField.textAlignment = NSTextAlignmentRight;
 	textField.placeholder = @"12345";
 	textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
 	textField.returnKeyType = UIReturnKeyDone;
@@ -778,7 +776,7 @@
 //			switch ([indexPath indexAtPosition:1])
 //			{
 //				case 0:
-//                    cell.textLabel.text = @"Getting started with Cycle Atlanta";
+//                    cell.textLabel.text = @"Getting started with Reno Tracks";
 //					break;
 //			}
 //			

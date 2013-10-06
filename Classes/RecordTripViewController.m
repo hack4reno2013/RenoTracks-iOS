@@ -1,11 +1,9 @@
-/** Cycle Atlanta, Copyright 2012, 2013 Georgia Institute of Technology
- *                                    Atlanta, GA. USA
+/** Reno Tracks, Copyright 2012, 2013 Hack4Reno
  *
- *   @author Christopher Le Dantec <ledantec@gatech.edu>
- *   @author Anhong Guo <guoanhong@gatech.edu>
+ *   @author Brad.Hellyar <bradhellyar@gmail.com>
  *
- *   Updated/Modified for Atlanta's app deployment. Based on the
- *   CycleTracks codebase for SFCTA.
+ *   Updated/Modified for Reno, Nevada app deployment. Based on the
+ *   CycleTracks codebase for SFCTA, and the Atlanta Cycle app repo.
  *
  ** CycleTracks, Copyright 2009,2010 San Francisco County Transportation Authority
  *                                    San Francisco, CA, USA
@@ -115,12 +113,12 @@
 	{
 		// add to CoreData store
 		CLLocationDistance distance = [tripManager addCoord:newLocation];
-		self.distCounter.text = [NSString stringWithFormat:@"%.1f mi", distance / 1609.344];
+		self.distCounter.text = [NSString stringWithFormat:@"%.1f", distance / 1609.344];
 	}
 	
 	// 	double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
 	if ( newLocation.speed >= 0. )
-		speedCounter.text = [NSString stringWithFormat:@"%.1f mph", newLocation.speed * 3600 / 1609.344];
+		speedCounter.text = [NSString stringWithFormat:@"%.1f", newLocation.speed * 3600 / 1609.344];
 	else
 		speedCounter.text = @"0.0";
 }
@@ -227,8 +225,8 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationController.navigationBarHidden = YES;
 	
-	// init map region to Atlanta
-	MKCoordinateRegion region = { { 33.749038, -84.388068 }, { 0.0078, 0.0068 } };
+	// init map region to Reno
+	MKCoordinateRegion region = { { 39.519933, -119.78964}, { 0.0078, 0.0068 } };
 	[mapView setRegion:region animated:NO];
 	
 	// setup info button used when showing recorded trips
@@ -267,19 +265,19 @@
 
 - (UIButton *)createNoteButton
 {
-    UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
-                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
-                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+//    UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
+//                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+//    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
+//                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     
-    [noteButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [noteButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    [noteButton setTitleColor:[[[UIColor alloc] initWithRed:185.0 / 255 green:91.0 / 255 blue:47.0 / 255 alpha:1.0 ] autorelease] forState:UIControlStateHighlighted];
+//    [noteButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+//    [noteButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+//    [noteButton setTitleColor:[[[UIColor alloc] initWithRed:185.0 / 255 green:91.0 / 255 blue:47.0 / 255 alpha:1.0 ] autorelease] forState:UIControlStateHighlighted];
     
 //    noteButton.backgroundColor = [UIColor clearColor];
     noteButton.enabled = YES;
     
-    [noteButton setTitle:@"Note this..." forState:UIControlStateNormal];
+    [noteButton setTitle:@"Mark" forState:UIControlStateNormal];
 
 //    noteButton.titleLabel.font = [UIFont boldSystemFontOfSize: 24];
     [noteButton addTarget:self action:@selector(notethis:) forControlEvents:UIControlEventTouchUpInside];
@@ -306,7 +304,7 @@
     [startButton setTitle:@"Start" forState:UIControlStateNormal];
     [startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     startButton.titleLabel.font = [UIFont boldSystemFontOfSize: 18];
-    startButton.titleLabel.shadowOffset = CGSizeMake (0, 0);
+    //startButton.titleLabel.shadowOffset = CGSizeMake (0, 0);
     startButton.titleLabel.textColor = [UIColor whiteColor];
     [startButton addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -368,7 +366,8 @@
     [startButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [startButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     [startButton setTitle:@"Start" forState:UIControlStateNormal];
-	
+	[startButton setTitleColor:[[[UIColor alloc] initWithRed:255.0 / 255 green:255.0 / 255 blue:255.0 / 255 alpha:1.0 ] autorelease] forState:UIControlStateNormal];
+    
 	// reset trip, reminder managers
 	NSManagedObjectContext *context = tripManager.managedObjectContext;
 	[self initTripManager:[[[TripManager alloc] initWithManagedObjectContext:context] autorelease]];
@@ -502,14 +501,17 @@
 												   userInfo:[self newTripTimerUserInfo] repeats:YES];
         }
         
-        UIImage *buttonImage = [[UIImage imageNamed:@"blueButton.png"]
+        UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-        UIImage *buttonImageHighlight = [[UIImage imageNamed:@"blueButtonHighlight.png"]
+        UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
                                          resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+
         [startButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [startButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+        [startButton setTitleColor:[[[UIColor alloc] initWithRed:46.0 / 255 green:136.0 / 255 blue:55.0 / 255 alpha:1.0 ] autorelease] forState:UIControlStateNormal];
         [startButton setTitle:@"Save" forState:UIControlStateNormal];
-
+        startButton.titleLabel.font = [UIFont boldSystemFontOfSize: 18];
+        
         // set recording flag so future location updates will be added as coords
         appDelegate = [[UIApplication sharedApplication] delegate];
         appDelegate.isRecording = YES;

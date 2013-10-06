@@ -1,21 +1,22 @@
-/** Cycle Atlanta, Copyright 2012, 2013 Georgia Institute of Technology
- *                                    Atlanta, GA. USA
+/** Reno Tracks, Copyright 2012, 2013 Hack4Reno
  *
- *   @author Christopher Le Dantec <ledantec@gatech.edu>
- *   @author Anhong Guo <guoanhong@gatech.edu>
+ *   @author Brad.Hellyar <bradhellyar@gmail.com>
  *
- *   Cycle Atlanta is free software: you can redistribute it and/or modify
+ *   Updated/Modified for Reno, Nevada app deployment. Based on the
+ *   CycleTracks codebase for SFCTA, and the Atlanta Cycle app repo.
+ *
+ *   Reno Tracks is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
  *   the Free Software Foundation, either version 3 of the License, or
  *   (at your option) any later version.
  *
- *   Cycle Atlanta is distributed in the hope that it will be useful,
+ *   Reno Tracks is distributed in the hope that it will be useful,
  *   but WITHOUT ANY WARRANTY; without even the implied warranty of
  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *   GNU General Public License for more details.
  *
  *   You should have received a copy of the GNU General Public License
- *   along with Cycle Atlanta.  If not, see <http://www.gnu.org/licenses/>.
+ *   along with Reno Tracks.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #import "DetailViewController.h"
@@ -49,6 +50,9 @@ static UIImage *shrinkImage(UIImage *original, CGSize size);
     }
     return self;
 }
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)viewDidLoad
 {
@@ -61,8 +65,8 @@ static UIImage *shrinkImage(UIImage *original, CGSize size);
         addPicButton.hidden = YES;
     }
     
-    detailTextView.layer.borderWidth = 1.0;
-    detailTextView.layer.borderColor = [[UIColor blackColor] CGColor];
+//    detailTextView.layer.borderWidth = 1.0;
+//    detailTextView.layer.borderColor = [[UIColor blackColor] CGColor];
     self.imageFrame = [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"photoFrame" ofType:@"png"]];
     imageFrameView.image = imageFrame;
 }

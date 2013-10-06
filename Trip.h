@@ -1,6 +1,5 @@
 //
 //  Trip.h
-//  Cycle Atlanta
 //
 //  Created by Guo Anhong on 13-2-26.
 //

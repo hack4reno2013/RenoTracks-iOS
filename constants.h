@@ -1,11 +1,9 @@
-/** Cycle Atlanta, Copyright 2012, 2013 Georgia Institute of Technology
- *                                    Atlanta, GA. USA
+/** Reno Tracks, Copyright 2012, 2013 Hack4Reno
  *
- *   @author Christopher Le Dantec <ledantec@gatech.edu>
- *   @author Anhong Guo <guoanhong@gatech.edu>
+ *   @author Brad.Hellyar <bradhellyar@gmail.com>
  *
- *   Updated/Modified for Atlanta's app deployment. Based on the
- *   CycleTracks codebase for SFCTA.
+ *   Updated/Modified for Reno, Nevada app deployment. Based on the
+ *   CycleTracks codebase for SFCTA, and the Atlanta Cycle app repo.
  *
  ** CycleTracks, Copyright 2009,2010 San Francisco County Transportation Authority
  *                                    San Francisco, CA, USA
@@ -69,7 +67,7 @@
 #define kSavingNoteTitle    @"Uploading your note"
 #define kSuccessTitle		@"Upload complete"
 #define kTripNotesTitle		@"Enter Comments Below"
-#define kConsentFor18Title  @"In order to send route data to Georgia Tech and the City of Reno, you must be at least 18."
+#define kConsentFor18Title  @"In order to send route data to the City of Reno, you must be at least 18."
 
 
 #define kInterruptedTitle		@"Recording Interrupted"
