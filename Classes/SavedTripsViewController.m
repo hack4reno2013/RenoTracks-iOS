@@ -100,6 +100,7 @@
 
 - (id)initWithManagedObjectContext:(NSManagedObjectContext*)context
 {
+    
     if (self = [super init]) {
 		self.managedObjectContext = context;
 
@@ -111,11 +112,14 @@
 
 - (void)initTripManager:(TripManager*)manager
 {
-	self.tripManager = manager;   
+
+    
+	self.tripManager = manager;
 }
 
 - (id)initWithTripManager:(TripManager*)manager
 {
+    
     if (self = [super init]) {
 		//NSLog(@"SavedTripsViewController::initWithTripManager");
 		self.tripManager = manager;
@@ -171,15 +175,16 @@
 
 - (void)viewDidLoad
 {
+    // load trips from CoreData
+	[self refreshTableView];
+    
     [super viewDidLoad];
 	self.tableView.rowHeight = kRowHeight;
 
 	// Set up the buttons.
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-	
-	// load trips from CoreData
-	[self refreshTableView];
+
 	
 	// check for countZeroDistanceTrips
 	if ( [tripManager countZeroDistanceTrips] )
@@ -224,14 +229,14 @@
 	NSLog(@"SavedTripsViewController viewWillAppear");
 
 	// update conditionally as needed
-	/*
-	if ( tripManager.dirty )
-	{
-		NSLog(@"dirty => refresh");
-		[self refreshTableView];
-		tripManager.dirty = NO;
-	}
-	 */
+	
+//	if ( tripManager.dirty )
+//	{
+//		NSLog(@"dirty => refresh");
+//		[self refreshTableView];
+//		tripManager.dirty = NO;
+//	}
+    
 	
 	[self refreshTableView];
 
@@ -252,6 +257,7 @@
  - (void)viewDidDisappear:(BOOL)animated
 { 
 	[super viewDidDisappear:animated];
+
 }
 
 

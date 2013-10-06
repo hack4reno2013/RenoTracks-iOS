@@ -171,10 +171,12 @@
     [super viewDidLoad];
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationController.navigationBarHidden = NO;
+    self.tabBarItem.title = @"My Marks";
     
 	if ( note )
 	{
 		// format date as a string
+        
         NSDateFormatter *outputDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
         [outputDateFormatter setDateStyle:kCFDateFormatterLongStyle];
         
@@ -252,7 +254,7 @@
         
         MKPointAnnotation *notePoint = [[[MKPointAnnotation alloc] init] autorelease];
         notePoint.coordinate = noteCoordinate;
-        notePoint.title = @"Note";
+        notePoint.title = @"Mark";
         [noteView addAnnotation:notePoint];
         
         

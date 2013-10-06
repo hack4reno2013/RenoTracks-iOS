@@ -269,7 +269,7 @@
         self.descriptionText.text = @"Please select the asset type & tap Save";
     }
     else if (pickerCategory == 3){
-        navBarItself.topItem.title = @"Note This";
+        navBarItself.topItem.title = @"Mark";
         self.descriptionText.text = @"Please select the type & tap Save";
         [self.customPickerView selectRow:6 inComponent:0 animated:NO];
         if ([self.customPickerView selectedRowInComponent:0] == 6) {
