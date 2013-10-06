@@ -26,7 +26,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>edu.gatech.ppl.cycleatlanta</string>
+	<string>edu.gatech.ppl.renotracks</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -34,7 +34,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
+	<string>1</string>
 	<key>CFBundleSignature</key>
 	<string>CAGT</string>
 	<key>CFBundleVersion</key>

@@ -87,12 +87,13 @@
         pickerCategory = [[NSUserDefaults standardUserDefaults] integerForKey:@"pickerCategory"];
         
         if (pickerCategory == 0) {
+
             view = [[CustomView alloc] initWithFrame:CGRectZero];
             view.title = @"Commute";
             view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
             [viewArray addObject:view];
             [view release];
-            
+
             view = [[CustomView alloc] initWithFrame:CGRectZero];
             view.title = @"School";
             view.image = [UIImage imageNamed:kTripPurposeSchoolIcon];
@@ -311,7 +312,7 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
 {
-	return [CustomView viewWidth];
+    return [CustomView viewWidth];
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
@@ -333,11 +334,25 @@
 #pragma mark UIPickerViewDelegate
 
 
+
 // tell the picker which view to use for a given component and row, we have an array of views to show
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row
 		  forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-	return [customPickerArray objectAtIndex:row];
+    UIView * myView = [self.customPickerArray objectAtIndex:row];
+    
+    UIGraphicsBeginImageContextWithOptions(myView.bounds.size, NO, 0);
+    
+    [myView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    return imageView;
+    
+//    return [customPickerArray objectAtIndex:row];
 }
 
 

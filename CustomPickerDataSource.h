@@ -71,9 +71,11 @@
 	NSArray	*customPickerArray;
 	id<UIPickerViewDelegate> parent;
     NSInteger pickerCategory;
+    NSArray *travelTypeArray;
 }
 
 @property (nonatomic, retain) NSArray *customPickerArray;
 @property (nonatomic, retain) id<UIPickerViewDelegate> parent;
+
 
 @end

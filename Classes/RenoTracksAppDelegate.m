@@ -40,7 +40,7 @@
 #import <CommonCrypto/CommonDigest.h>
 
 
-#import "CycleAtlantaAppDelegate.h"
+#import "RenoTracksAppDelegate.h"
 #import "PersonalInfoViewController.h"
 #import "RecordTripViewController.h"
 #import "SavedTripsViewController.h"
@@ -54,7 +54,7 @@
 #import <CoreData/NSMappingModel.h>
 
 
-@implementation CycleAtlantaAppDelegate
+@implementation RenoTracksAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;
@@ -296,7 +296,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *) application
 {
-    CycleAtlantaAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    RenoTracksAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     if(appDelegate.isRecording){
         NSLog(@"BACKGROUNDED and recording"); //set location service to startUpdatingLocation
         [appDelegate.locationManager startUpdatingLocation];
@@ -310,7 +310,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *) application
 {
     //always turnon location updating when active.
-    CycleAtlantaAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    RenoTracksAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     //[appDelegate.locationManager stoptMonitoringSignificantLocationChanges];
     [appDelegate.locationManager startUpdatingLocation];
 }
@@ -357,7 +357,7 @@
         return managedObjectModel;
     }
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"CycleAtlanta" ofType:@"momd"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"RenoTracks" ofType:@"momd"];
     NSURL *momURL = [NSURL fileURLWithPath:path];
     managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:momURL];
     

@@ -77,7 +77,9 @@
     
     return appDelegate.locationManager;
 }
-
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
@@ -120,7 +122,7 @@
 	if ( newLocation.speed >= 0. )
 		speedCounter.text = [NSString stringWithFormat:@"%.1f mph", newLocation.speed * 3600 / 1609.344];
 	else
-		speedCounter.text = @"0.0 mph";
+		speedCounter.text = @"0.0";
 }
 
 
@@ -265,9 +267,9 @@
 
 - (UIButton *)createNoteButton
 {
-    UIImage *buttonImage = [[UIImage imageNamed:@"whiteButton.png"]
+    UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"whiteButtonHighlight.png"]
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     
     [noteButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
@@ -547,7 +549,7 @@
 													  initWithNibName:@"TripPurposePicker" bundle:nil];
 		[tripPurposePickerView setDelegate:self];
 		//[[self navigationController] pushViewController:pickerViewController animated:YES];
-		[self.navigationController presentModalViewController:tripPurposePickerView animated:YES];
+		[self.navigationController presentViewController:tripPurposePickerView animated:YES completion:nil];
 		[tripPurposePickerView release];
 	}
 	
@@ -606,7 +608,7 @@
                                                        initWithNibName:@"TripPurposePicker" bundle:nil];
 		[notePickerView setDelegate:self];
 		//[[self navigationController] pushViewController:pickerViewController animated:YES];
-		[self.navigationController presentModalViewController:notePickerView animated:YES];
+		[self.navigationController presentViewController:notePickerView animated:YES completion:nil];
         
         //add location information
         
@@ -826,7 +828,7 @@ shouldSelectViewController:(UIViewController *)viewController
 
 - (void)didCancelPurpose
 {
-	[self.navigationController dismissModalViewControllerAnimated:YES];
+	[self.navigationController dismissViewControllerAnimated:YES completion:nil];
     appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.isRecording = YES;
 	recording = YES;
@@ -838,7 +840,7 @@ shouldSelectViewController:(UIViewController *)viewController
 
 - (void)didCancelNote
 {
-	[self.navigationController dismissModalViewControllerAnimated:YES];
+	[self.navigationController dismissViewControllerAnimated:YES completion:nil];
     appDelegate = [[UIApplication sharedApplication] delegate];
 }
 

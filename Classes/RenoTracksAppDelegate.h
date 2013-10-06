@@ -38,7 +38,7 @@
 //	e-mail Billy Charlton at the SFCTA <billy.charlton@sfcta.org>
 #import <CoreLocation/CoreLocation.h>
 
-@interface CycleAtlantaAppDelegate : NSObject <UIApplicationDelegate>
+@interface RenoTracksAppDelegate : NSObject <UIApplicationDelegate>
 {
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    

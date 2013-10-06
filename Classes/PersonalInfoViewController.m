@@ -631,7 +631,7 @@
 			switch ([indexPath indexAtPosition:1])
 			{
 				case 0:
-					cell.textLabel.text = @"Getting started with Cycle Atlanta";
+					cell.textLabel.text = @"Getting started with Reno Tracks";
 					break;
 			}
 			

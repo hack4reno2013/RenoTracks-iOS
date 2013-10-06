@@ -151,12 +151,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     NSLog(@"Size of Image(bytes):%d",[imageData length]);
     self.image = thumbnail;
-    [picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     [picker release];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     [picker release];
 }
 
@@ -195,7 +195,7 @@ static UIImage *shrinkImage(UIImage *original, CGSize size) {
         //picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
         picker.delegate = self;
         picker.sourceType = sourceType;
-        [self presentModalViewController:picker animated:YES];
+        [self presentViewController:picker animated:YES completion:nil];
 //        [picker release];
     } else {
         UIAlertView *alert = [[UIAlertView alloc]

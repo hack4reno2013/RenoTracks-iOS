@@ -918,13 +918,13 @@
 
 - (void)didCancelPurpose
 {
-	[self.navigationController dismissModalViewControllerAnimated:YES];
+	[self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 - (void)didPickPurpose:(unsigned int)index
 {
-	[self.navigationController dismissModalViewControllerAnimated:YES];
+	[self.navigationController dismissViewControllerAnimated:YES completion:nil];
 	[tripManager setPurpose:index];
 	//[tripManager promptForTripNotes];
 }

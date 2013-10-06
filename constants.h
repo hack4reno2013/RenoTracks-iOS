@@ -69,7 +69,7 @@
 #define kSavingNoteTitle    @"Uploading your note"
 #define kSuccessTitle		@"Upload complete"
 #define kTripNotesTitle		@"Enter Comments Below"
-#define kConsentFor18Title  @"In order to send route data to Georgia Tech and the City of Atlanta, you must be at least 18."
+#define kConsentFor18Title  @"In order to send route data to Georgia Tech and the City of Reno, you must be at least 18."
 
 
 #define kInterruptedTitle		@"Recording Interrupted"
@@ -89,11 +89,11 @@
 #define kSaveAccepted		@"Your trip has already been uploaded. Thank you."
 #define kSaveError			@"Your trip has been saved. Please try uploading again later."
 
-#define kInfoURL			@"http://cycleatlanta.org/CycleAtlantaInfo"
-#define kInstructionsURL	@"http://cycleatlanta.org/instructions-v2/"
+#define kInfoURL			@"http://renotracks.hp.af.cm/"
+#define kInstructionsURL	@"http://renotracks.hp.af.cm/www/instructions/"
 
-#define kSaveURL			@"http://cycleatlanta.org/post/"
-//#define kSaveURL			@""
+#define kSaveURL			@"http://renotracks.hp.af.cm/post/"
+
 
 #define kTripNotesPlaceholder	@"Comments"
 

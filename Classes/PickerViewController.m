@@ -76,6 +76,9 @@
 	return pickerRect;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)createCustomPicker
 {
@@ -93,7 +96,7 @@
 	// you just need to set the correct origin in your view.
 	//
 	// position the picker at the bottom
-	CGSize pickerSize = [customPickerView sizeThatFits:CGSizeZero];
+	CGSize pickerSize = CGSizeMake(320, 216);
 	customPickerView.frame = [self pickerFrameWithSize:pickerSize];
 	
 	customPickerView.showsSelectionIndicator = YES;
@@ -125,7 +128,7 @@
         TripDetailViewController *tripDetailViewController = [[TripDetailViewController alloc] initWithNibName:@"TripDetailViewController" bundle:nil];
         tripDetailViewController.delegate = self.delegate;
         
-        [self presentModalViewController:tripDetailViewController animated:YES];
+        [self presentViewController:tripDetailViewController animated:YES completion:nil];
         
         [delegate didPickPurpose:row];
     }
@@ -138,7 +141,7 @@
         DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
         detailViewController.delegate = self.delegate;
         
-        [self presentModalViewController:detailViewController animated:YES];
+        [self presentViewController:detailViewController animated:YES completion:nil];
         //Note: get index of picker
         NSInteger row = [customPickerView selectedRowInComponent:0];
         
@@ -159,7 +162,7 @@
         DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
         detailViewController.delegate = self.delegate;
         
-        [self presentModalViewController:detailViewController animated:YES];
+        [self presentViewController:detailViewController animated:YES completion:nil];
         //do something here: get index for later use.
         NSInteger row = [customPickerView selectedRowInComponent:0];
         
@@ -181,7 +184,7 @@
         DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
         detailViewController.delegate = self.delegate;
         
-        [self presentModalViewController:detailViewController animated:YES];
+        [self presentViewController:detailViewController animated:YES completion:nil];
         
         
         //Note: get index of type

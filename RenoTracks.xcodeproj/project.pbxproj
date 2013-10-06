@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* CycleAtlantaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CycleAtlantaAppDelegate.m */; };
+		1D3623260D0F684500981E51 /* RenoTracksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* RenoTracksAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -59,7 +59,7 @@
 		8F9C086716DC9479003EA308 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C086616DC9479003EA308 /* Trip.m */; };
 		8F9C086A16DC947A003EA308 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C086916DC947A003EA308 /* User.m */; };
 		8F9C086D16DC947A003EA308 /* Coord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C086C16DC947A003EA308 /* Coord.m */; };
-		8FA0AD9416BB4ED800E0E7C4 /* CycleAtlanta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0AD9116BB4ED800E0E7C4 /* CycleAtlanta.xcdatamodeld */; };
+		8FA0AD9416BB4ED800E0E7C4 /* RenoTracks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0AD9116BB4ED800E0E7C4 /* RenoTracks.xcdatamodeld */; };
 		8FAD930516F189EE00082B6F /* UIImageViewResizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAD930416F189EE00082B6F /* UIImageViewResizable.m */; };
 		8FB7C20D16C55EB9001A8A48 /* NoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB7C20C16C55EB9001A8A48 /* NoteManager.m */; };
 		8FBCD3CA16E0E58100C11EBE /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCD3C816E0E58100C11EBE /* NoteViewController.m */; };
@@ -95,31 +95,6 @@
 		9D4647C21604EBF400A4F9CB /* redButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647B41604EBF400A4F9CB /* redButton@2x.png */; };
 		9D4647C31604EBF400A4F9CB /* redButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647B51604EBF400A4F9CB /* redButtonHighlight.png */; };
 		9D4647C41604EBF400A4F9CB /* redButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647B61604EBF400A4F9CB /* redButtonHighlight@2x.png */; };
-		9D4647E11604EF1200A4F9CB /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647C71604EF1200A4F9CB /* 20-gear2.png */; };
-		9D4647E21604EF1200A4F9CB /* ArrowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647C81604EF1200A4F9CB /* ArrowButton.png */; };
-		9D4647E31604EF1200A4F9CB /* cancel_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647C91604EF1200A4F9CB /* cancel_button.png */; };
-		9D4647E41604EF1200A4F9CB /* ClearArrowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647CA1604EF1200A4F9CB /* ClearArrowButton.png */; };
-		9D4647E51604EF1200A4F9CB /* ClearArrowButtonDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647CB1604EF1200A4F9CB /* ClearArrowButtonDark.png */; };
-		9D4647E61604EF1200A4F9CB /* ClearArrowButtonWideDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647CC1604EF1200A4F9CB /* ClearArrowButtonWideDark.png */; };
-		9D4647E71604EF1200A4F9CB /* GreenCheckMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647CD1604EF1200A4F9CB /* GreenCheckMark.png */; };
-		9D4647E81604EF1200A4F9CB /* GreenCheckMark2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647CE1604EF1200A4F9CB /* GreenCheckMark2.png */; };
-		9D4647E91604EF1200A4F9CB /* GreenCheckMark3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647CF1604EF1200A4F9CB /* GreenCheckMark3.png */; };
-		9D4647EA1604EF1200A4F9CB /* LargeCounter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D01604EF1200A4F9CB /* LargeCounter.png */; };
-		9D4647EB1604EF1200A4F9CB /* lock_button1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D11604EF1200A4F9CB /* lock_button1.png */; };
-		9D4647EC1604EF1200A4F9CB /* lock_button2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D21604EF1200A4F9CB /* lock_button2.png */; };
-		9D4647ED1604EF1200A4F9CB /* lock_button_fpo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D31604EF1200A4F9CB /* lock_button_fpo.png */; };
-		9D4647EE1604EF1200A4F9CB /* LockIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D41604EF1200A4F9CB /* LockIcon.png */; };
-		9D4647EF1604EF1200A4F9CB /* OpacityMask80.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D51604EF1200A4F9CB /* OpacityMask80.png */; };
-		9D4647F01604EF1200A4F9CB /* OpacityMaskWindow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D61604EF1200A4F9CB /* OpacityMaskWindow.png */; };
-		9D4647F11604EF1200A4F9CB /* orangeslide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D71604EF1200A4F9CB /* orangeslide.png */; };
-		9D4647F21604EF1200A4F9CB /* save_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D81604EF1200A4F9CB /* save_button.png */; };
-		9D4647F31604EF1200A4F9CB /* save_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647D91604EF1200A4F9CB /* save_button_selected.png */; };
-		9D4647F41604EF1200A4F9CB /* slider_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647DA1604EF1200A4F9CB /* slider_ball.png */; };
-		9D4647F51604EF1200A4F9CB /* SlideToUnlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647DB1604EF1200A4F9CB /* SlideToUnlock.png */; };
-		9D4647F61604EF1200A4F9CB /* start_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647DC1604EF1200A4F9CB /* start_button.png */; };
-		9D4647F71604EF1200A4F9CB /* start_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647DD1604EF1200A4F9CB /* start_button_selected.png */; };
-		9D4647F81604EF1200A4F9CB /* UnlockIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647DE1604EF1200A4F9CB /* UnlockIcon.png */; };
-		9D4647FA1604EF1200A4F9CB /* yellowslide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647E01604EF1200A4F9CB /* yellowslide.png */; };
 		9D46480E1604EF2600A4F9CB /* commute.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647FC1604EF2600A4F9CB /* commute.png */; };
 		9D46480F1604EF2600A4F9CB /* commute@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647FD1604EF2600A4F9CB /* commute@2x.png */; };
 		9D4648101604EF2600A4F9CB /* errands.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4647FE1604EF2600A4F9CB /* errands.png */; };
@@ -170,18 +145,20 @@
 		9D6D31AD16D7C189007A2497 /* noteBlankPicker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D31AB16D7C189007A2497 /* noteBlankPicker.png */; };
 		9D6D31AE16D7C189007A2497 /* noteBlankPicker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D31AC16D7C189007A2497 /* noteBlankPicker@2x.png */; };
 		9DD65FBB16FEA3CC00F2EB63 /* ImageResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD65FBA16FEA3CC00F2EB63 /* ImageResize.m */; };
+		A21F08141800DCD600638A15 /* yellowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A21F08121800DCD600638A15 /* yellowButton.png */; };
+		A21F08151800DCD600638A15 /* yellowButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A21F08131800DCD600638A15 /* yellowButton@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* CycleAtlantaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleAtlantaAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* CycleAtlantaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleAtlantaAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Cycle Atlanta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cycle Atlanta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3623240D0F684500981E51 /* RenoTracksAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenoTracksAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* RenoTracksAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenoTracksAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* RenoTracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenoTracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* Cycle Atlanta_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cycle Atlanta_Prefix.pch"; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* RenoTracks_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenoTracks_Prefix.pch; sourceTree = "<group>"; };
 		6411996010683D7500C201F0 /* RecordTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RecordTripViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6411996110683D7500C201F0 /* RecordTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RecordTripViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6411996C10683DCD00C201F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -234,7 +211,7 @@
 		64F824E4106AFFA4001413F8 /* PersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
 		64F824E5106AFFA4001413F8 /* PersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
 		64FCC5B311352242000FA1B6 /* PersonalInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfo.xib; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Cycle Atlanta-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cycle Atlanta-Info.plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* RenoTracks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RenoTracks-Info.plist"; sourceTree = "<group>"; };
 		8F1B1D3D164B94C60022B776 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		8F1B1D3E164B94C60022B776 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8F1B1D40164B94E90022B776 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
@@ -256,8 +233,8 @@
 		8F9C086916DC947A003EA308 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		8F9C086B16DC947A003EA308 /* Coord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coord.h; sourceTree = "<group>"; };
 		8F9C086C16DC947A003EA308 /* Coord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coord.m; sourceTree = "<group>"; };
-		8FA0AD9216BB4ED800E0E7C4 /* CycleAtlanta 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CycleAtlanta 2.xcdatamodel"; sourceTree = "<group>"; };
-		8FA0AD9316BB4ED800E0E7C4 /* CycleAtlanta.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CycleAtlanta.xcdatamodel; sourceTree = "<group>"; };
+		8FA0AD9216BB4ED800E0E7C4 /* RenoTracks2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RenoTracks2.xcdatamodel; sourceTree = "<group>"; };
+		8FA0AD9316BB4ED800E0E7C4 /* RenoTracks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RenoTracks.xcdatamodel; sourceTree = "<group>"; };
 		8FAD930316F189EE00082B6F /* UIImageViewResizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIImageViewResizable.h; path = ../UIImageViewResizable.h; sourceTree = "<group>"; };
 		8FAD930416F189EE00082B6F /* UIImageViewResizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIImageViewResizable.m; path = ../UIImageViewResizable.m; sourceTree = "<group>"; };
 		8FB7C20B16C55EB9001A8A48 /* NoteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NoteManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -296,31 +273,6 @@
 		9D4647B41604EBF400A4F9CB /* redButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redButton@2x.png"; sourceTree = "<group>"; };
 		9D4647B51604EBF400A4F9CB /* redButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButtonHighlight.png; sourceTree = "<group>"; };
 		9D4647B61604EBF400A4F9CB /* redButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redButtonHighlight@2x.png"; sourceTree = "<group>"; };
-		9D4647C71604EF1200A4F9CB /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
-		9D4647C81604EF1200A4F9CB /* ArrowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowButton.png; sourceTree = "<group>"; };
-		9D4647C91604EF1200A4F9CB /* cancel_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_button.png; sourceTree = "<group>"; };
-		9D4647CA1604EF1200A4F9CB /* ClearArrowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClearArrowButton.png; sourceTree = "<group>"; };
-		9D4647CB1604EF1200A4F9CB /* ClearArrowButtonDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClearArrowButtonDark.png; sourceTree = "<group>"; };
-		9D4647CC1604EF1200A4F9CB /* ClearArrowButtonWideDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClearArrowButtonWideDark.png; sourceTree = "<group>"; };
-		9D4647CD1604EF1200A4F9CB /* GreenCheckMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenCheckMark.png; sourceTree = "<group>"; };
-		9D4647CE1604EF1200A4F9CB /* GreenCheckMark2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenCheckMark2.png; sourceTree = "<group>"; };
-		9D4647CF1604EF1200A4F9CB /* GreenCheckMark3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenCheckMark3.png; sourceTree = "<group>"; };
-		9D4647D01604EF1200A4F9CB /* LargeCounter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeCounter.png; sourceTree = "<group>"; };
-		9D4647D11604EF1200A4F9CB /* lock_button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock_button1.png; sourceTree = "<group>"; };
-		9D4647D21604EF1200A4F9CB /* lock_button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock_button2.png; sourceTree = "<group>"; };
-		9D4647D31604EF1200A4F9CB /* lock_button_fpo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock_button_fpo.png; sourceTree = "<group>"; };
-		9D4647D41604EF1200A4F9CB /* LockIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LockIcon.png; sourceTree = "<group>"; };
-		9D4647D51604EF1200A4F9CB /* OpacityMask80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpacityMask80.png; sourceTree = "<group>"; };
-		9D4647D61604EF1200A4F9CB /* OpacityMaskWindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpacityMaskWindow.png; sourceTree = "<group>"; };
-		9D4647D71604EF1200A4F9CB /* orangeslide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeslide.png; sourceTree = "<group>"; };
-		9D4647D81604EF1200A4F9CB /* save_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save_button.png; sourceTree = "<group>"; };
-		9D4647D91604EF1200A4F9CB /* save_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save_button_selected.png; sourceTree = "<group>"; };
-		9D4647DA1604EF1200A4F9CB /* slider_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_ball.png; sourceTree = "<group>"; };
-		9D4647DB1604EF1200A4F9CB /* SlideToUnlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlideToUnlock.png; sourceTree = "<group>"; };
-		9D4647DC1604EF1200A4F9CB /* start_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_button.png; sourceTree = "<group>"; };
-		9D4647DD1604EF1200A4F9CB /* start_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_button_selected.png; sourceTree = "<group>"; };
-		9D4647DE1604EF1200A4F9CB /* UnlockIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnlockIcon.png; sourceTree = "<group>"; };
-		9D4647E01604EF1200A4F9CB /* yellowslide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowslide.png; sourceTree = "<group>"; };
 		9D4647FC1604EF2600A4F9CB /* commute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commute.png; sourceTree = "<group>"; };
 		9D4647FD1604EF2600A4F9CB /* commute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commute@2x.png"; sourceTree = "<group>"; };
 		9D4647FE1604EF2600A4F9CB /* errands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = errands.png; sourceTree = "<group>"; };
@@ -373,6 +325,8 @@
 		9D6D31AC16D7C189007A2497 /* noteBlankPicker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "noteBlankPicker@2x.png"; path = "TripPurposePickerIcons V3/noteBlankPicker@2x.png"; sourceTree = SOURCE_ROOT; };
 		9DD65FB916FEA3CC00F2EB63 /* ImageResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResize.h; sourceTree = "<group>"; };
 		9DD65FBA16FEA3CC00F2EB63 /* ImageResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResize.m; sourceTree = "<group>"; };
+		A21F08121800DCD600638A15 /* yellowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowButton.png; sourceTree = "<group>"; };
+		A21F08131800DCD600638A15 /* yellowButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellowButton@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,8 +358,8 @@
 				64210F5F11350C8500415F1A /* AboutViewController.h */,
 				64210F6011350C8500415F1A /* AboutViewController.m */,
 				6433E5D3106D66EA00C27387 /* ActivityIndicatorDelegate.h */,
-				1D3623240D0F684500981E51 /* CycleAtlantaAppDelegate.h */,
-				1D3623250D0F684500981E51 /* CycleAtlantaAppDelegate.m */,
+				1D3623240D0F684500981E51 /* RenoTracksAppDelegate.h */,
+				1D3623250D0F684500981E51 /* RenoTracksAppDelegate.m */,
 				8F1B1D3D164B94C60022B776 /* DetailViewController.h */,
 				8F1B1D3E164B94C60022B776 /* DetailViewController.m */,
 				9DD65FB916FEA3CC00F2EB63 /* ImageResize.h */,
@@ -456,7 +410,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Cycle Atlanta.app */,
+				1D6058910D05DD3D006BFB54 /* RenoTracks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -480,7 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				64F823B6106AB402001413F8 /* constants.h */,
-				32CA4F630368D1EE00C91783 /* Cycle Atlanta_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* RenoTracks_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -492,12 +446,11 @@
 				9D46482B1604EF3800A4F9CB /* TabBarIcons V2 */,
 				9D4648201604EF2F00A4F9CB /* UI Elements */,
 				9D4647FB1604EF2600A4F9CB /* TripPurposePickerIcons V3 */,
-				9D4647C61604EF1200A4F9CB /* Depricated Images */,
 				9D4647A81604EBF400A4F9CB /* Button Icons */,
 				6411A185106A90E400C201F0 /* TripPurposePickerIcons v2 */,
 				6411A16A106A05DE00C201F0 /* Images */,
 				6458114D107AA4D30075DABD /* bicycle-bell-normalized.aiff */,
-				8D1107310486CEB800E47090 /* Cycle Atlanta-Info.plist */,
+				8D1107310486CEB800E47090 /* RenoTracks-Info.plist */,
 				64577E28106DC2FD003ACBFD /* dist.plist */,
 				64210F28113508B800415F1A /* MainWindow.xib */,
 				642F14791071D3F10050BCB9 /* MapViewController.xib */,
@@ -532,7 +485,7 @@
 		6411992B1068371B00C201F0 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				8FA0AD9116BB4ED800E0E7C4 /* CycleAtlanta.xcdatamodeld */,
+				8FA0AD9116BB4ED800E0E7C4 /* RenoTracks.xcdatamodeld */,
 				8F316F661703161E0087529E /* Model.xcmappingmodel */,
 				8F9C086B16DC947A003EA308 /* Coord.h */,
 				8F9C086C16DC947A003EA308 /* Coord.m */,
@@ -605,6 +558,8 @@
 				9D4647AD1604EBF400A4F9CB /* greenButton.png */,
 				9D4647AE1604EBF400A4F9CB /* greenButton@2x.png */,
 				9D4647AF1604EBF400A4F9CB /* greenButtonHighlight.png */,
+				A21F08121800DCD600638A15 /* yellowButton.png */,
+				A21F08131800DCD600638A15 /* yellowButton@2x.png */,
 				9D4647B01604EBF400A4F9CB /* greenButtonHighlight@2x.png */,
 				9D4647B11604EBF400A4F9CB /* greyButton.png */,
 				9D4647B21604EBF400A4F9CB /* greyButton@2x.png */,
@@ -614,38 +569,6 @@
 				9D4647B61604EBF400A4F9CB /* redButtonHighlight@2x.png */,
 			);
 			path = "Button Icons";
-			sourceTree = "<group>";
-		};
-		9D4647C61604EF1200A4F9CB /* Depricated Images */ = {
-			isa = PBXGroup;
-			children = (
-				9D4647C71604EF1200A4F9CB /* 20-gear2.png */,
-				9D4647C81604EF1200A4F9CB /* ArrowButton.png */,
-				9D4647C91604EF1200A4F9CB /* cancel_button.png */,
-				9D4647CA1604EF1200A4F9CB /* ClearArrowButton.png */,
-				9D4647CB1604EF1200A4F9CB /* ClearArrowButtonDark.png */,
-				9D4647CC1604EF1200A4F9CB /* ClearArrowButtonWideDark.png */,
-				9D4647CD1604EF1200A4F9CB /* GreenCheckMark.png */,
-				9D4647CE1604EF1200A4F9CB /* GreenCheckMark2.png */,
-				9D4647CF1604EF1200A4F9CB /* GreenCheckMark3.png */,
-				9D4647D01604EF1200A4F9CB /* LargeCounter.png */,
-				9D4647D11604EF1200A4F9CB /* lock_button1.png */,
-				9D4647D21604EF1200A4F9CB /* lock_button2.png */,
-				9D4647D31604EF1200A4F9CB /* lock_button_fpo.png */,
-				9D4647D41604EF1200A4F9CB /* LockIcon.png */,
-				9D4647D51604EF1200A4F9CB /* OpacityMask80.png */,
-				9D4647D61604EF1200A4F9CB /* OpacityMaskWindow.png */,
-				9D4647D71604EF1200A4F9CB /* orangeslide.png */,
-				9D4647D81604EF1200A4F9CB /* save_button.png */,
-				9D4647D91604EF1200A4F9CB /* save_button_selected.png */,
-				9D4647DA1604EF1200A4F9CB /* slider_ball.png */,
-				9D4647DB1604EF1200A4F9CB /* SlideToUnlock.png */,
-				9D4647DC1604EF1200A4F9CB /* start_button.png */,
-				9D4647DD1604EF1200A4F9CB /* start_button_selected.png */,
-				9D4647DE1604EF1200A4F9CB /* UnlockIcon.png */,
-				9D4647E01604EF1200A4F9CB /* yellowslide.png */,
-			);
-			path = "Depricated Images";
 			sourceTree = "<group>";
 		};
 		9D4647FB1604EF2600A4F9CB /* TripPurposePickerIcons V3 */ = {
@@ -719,9 +642,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Cycle Atlanta */ = {
+		1D6058900D05DD3D006BFB54 /* RenoTracks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Cycle Atlanta" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "RenoTracks" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -731,9 +654,9 @@
 			);
 			dependencies = (
 			);
-			name = "Cycle Atlanta";
+			name = RenoTracks;
 			productName = CycleTracks;
-			productReference = 1D6058910D05DD3D006BFB54 /* Cycle Atlanta.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* RenoTracks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -744,7 +667,7 @@
 			attributes = {
 				LastUpgradeCheck = 0440;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cycle Atlanta" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RenoTracks" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -755,7 +678,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Cycle Atlanta */,
+				1D6058900D05DD3D006BFB54 /* RenoTracks */,
 			);
 		};
 /* End PBXProject section */
@@ -795,31 +718,6 @@
 				9D4647C21604EBF400A4F9CB /* redButton@2x.png in Resources */,
 				9D4647C31604EBF400A4F9CB /* redButtonHighlight.png in Resources */,
 				9D4647C41604EBF400A4F9CB /* redButtonHighlight@2x.png in Resources */,
-				9D4647E11604EF1200A4F9CB /* 20-gear2.png in Resources */,
-				9D4647E21604EF1200A4F9CB /* ArrowButton.png in Resources */,
-				9D4647E31604EF1200A4F9CB /* cancel_button.png in Resources */,
-				9D4647E41604EF1200A4F9CB /* ClearArrowButton.png in Resources */,
-				9D4647E51604EF1200A4F9CB /* ClearArrowButtonDark.png in Resources */,
-				9D4647E61604EF1200A4F9CB /* ClearArrowButtonWideDark.png in Resources */,
-				9D4647E71604EF1200A4F9CB /* GreenCheckMark.png in Resources */,
-				9D4647E81604EF1200A4F9CB /* GreenCheckMark2.png in Resources */,
-				9D4647E91604EF1200A4F9CB /* GreenCheckMark3.png in Resources */,
-				9D4647EA1604EF1200A4F9CB /* LargeCounter.png in Resources */,
-				9D4647EB1604EF1200A4F9CB /* lock_button1.png in Resources */,
-				9D4647EC1604EF1200A4F9CB /* lock_button2.png in Resources */,
-				9D4647ED1604EF1200A4F9CB /* lock_button_fpo.png in Resources */,
-				9D4647EE1604EF1200A4F9CB /* LockIcon.png in Resources */,
-				9D4647EF1604EF1200A4F9CB /* OpacityMask80.png in Resources */,
-				9D4647F01604EF1200A4F9CB /* OpacityMaskWindow.png in Resources */,
-				9D4647F11604EF1200A4F9CB /* orangeslide.png in Resources */,
-				9D4647F21604EF1200A4F9CB /* save_button.png in Resources */,
-				9D4647F31604EF1200A4F9CB /* save_button_selected.png in Resources */,
-				9D4647F41604EF1200A4F9CB /* slider_ball.png in Resources */,
-				9D4647F51604EF1200A4F9CB /* SlideToUnlock.png in Resources */,
-				9D4647F61604EF1200A4F9CB /* start_button.png in Resources */,
-				9D4647F71604EF1200A4F9CB /* start_button_selected.png in Resources */,
-				9D4647F81604EF1200A4F9CB /* UnlockIcon.png in Resources */,
-				9D4647FA1604EF1200A4F9CB /* yellowslide.png in Resources */,
 				9D46480E1604EF2600A4F9CB /* commute.png in Resources */,
 				9D46480F1604EF2600A4F9CB /* commute@2x.png in Resources */,
 				9D4648101604EF2600A4F9CB /* errands.png in Resources */,
@@ -837,6 +735,7 @@
 				9D46481C1604EF2600A4F9CB /* social.png in Resources */,
 				9D46481D1604EF2600A4F9CB /* social@2x.png in Resources */,
 				9D46481E1604EF2600A4F9CB /* workRelated.png in Resources */,
+				A21F08151800DCD600638A15 /* yellowButton@2x.png in Resources */,
 				9D46481F1604EF2600A4F9CB /* workRelated@2x.png in Resources */,
 				9D4648261604EF2F00A4F9CB /* LCD-screen-288x126.png in Resources */,
 				9D4648271604EF2F00A4F9CB /* lcd-screen.png in Resources */,
@@ -849,6 +748,7 @@
 				9D4648371604EF3800A4F9CB /* tabbar_record@2x.png in Resources */,
 				9D4648381604EF3800A4F9CB /* tabbar_settings.png in Resources */,
 				9D4648391604EF3800A4F9CB /* tabbar_settings@2x.png in Resources */,
+				A21F08141800DCD600638A15 /* yellowButton.png in Resources */,
 				9D46483A1604EF3800A4F9CB /* tabbar_view.png in Resources */,
 				9D46483B1604EF3800A4F9CB /* tabbar_view@2x.png in Resources */,
 				9D47F901160BA4E900B8B14D /* appStoreIcon512.png in Resources */,
@@ -896,7 +796,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* CycleAtlantaAppDelegate.m in Sources */,
+				1D3623260D0F684500981E51 /* RenoTracksAppDelegate.m in Sources */,
 				6411996210683D7500C201F0 /* RecordTripViewController.m in Sources */,
 				641199B2106851AA00C201F0 /* SavedTripsViewController.m in Sources */,
 				64119AAD1068672100C201F0 /* CustomView.m in Sources */,
@@ -914,7 +814,7 @@
 				8F5E60671602CBE000D8F85D /* UIDevice+IdentifierAddition.m in Sources */,
 				8F1B1D3F164B94C60022B776 /* DetailViewController.m in Sources */,
 				9D504DA116B6CF4000B99EBC /* ZipUtil.m in Sources */,
-				8FA0AD9416BB4ED800E0E7C4 /* CycleAtlanta.xcdatamodeld in Sources */,
+				8FA0AD9416BB4ED800E0E7C4 /* RenoTracks.xcdatamodeld in Sources */,
 				8FB7C20D16C55EB9001A8A48 /* NoteManager.m in Sources */,
 				8F9C086416DC9479003EA308 /* Note.m in Sources */,
 				8F9C086716DC9479003EA308 /* Trip.m in Sources */,
@@ -943,10 +843,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
-				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
+				INFOPLIST_FILE = "RenoTracks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -961,10 +861,10 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
-				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
+				INFOPLIST_FILE = "RenoTracks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -992,10 +892,10 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
-				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
+				INFOPLIST_FILE = "RenoTracks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1028,10 +928,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
-				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
+				INFOPLIST_FILE = "RenoTracks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1060,10 +960,10 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
-				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
+				INFOPLIST_FILE = "RenoTracks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1098,7 +998,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Cycle Atlanta" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "RenoTracks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -1110,7 +1010,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cycle Atlanta" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RenoTracks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
@@ -1125,14 +1025,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8FA0AD9116BB4ED800E0E7C4 /* CycleAtlanta.xcdatamodeld */ = {
+		8FA0AD9116BB4ED800E0E7C4 /* RenoTracks.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8FA0AD9216BB4ED800E0E7C4 /* CycleAtlanta 2.xcdatamodel */,
-				8FA0AD9316BB4ED800E0E7C4 /* CycleAtlanta.xcdatamodel */,
+				8FA0AD9216BB4ED800E0E7C4 /* RenoTracks2.xcdatamodel */,
+				8FA0AD9316BB4ED800E0E7C4 /* RenoTracks.xcdatamodel */,
 			);
-			currentVersion = 8FA0AD9216BB4ED800E0E7C4 /* CycleAtlanta 2.xcdatamodel */;
-			path = CycleAtlanta.xcdatamodeld;
+			currentVersion = 8FA0AD9216BB4ED800E0E7C4 /* RenoTracks2.xcdatamodel */;
+			path = RenoTracks.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

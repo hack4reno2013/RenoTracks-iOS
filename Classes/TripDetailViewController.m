@@ -37,13 +37,17 @@
     return self;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad
 {
     [self.detailTextView becomeFirstResponder];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    detailTextView.layer.borderWidth = 1.0;
-    detailTextView.layer.borderColor = [[UIColor blackColor] CGColor];
+//    detailTextView.layer.borderWidth = 1.0;
+//    detailTextView.layer.borderColor = [[UIColor blackColor] CGColor];
 }
 
 -(IBAction)skip:(id)sender{
