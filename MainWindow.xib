@@ -32,7 +32,7 @@
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <nil key="simulatedDestinationMetrics"/>
             <tabBar key="tabBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="18">
-                <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                <rect key="frame" x="0.0" y="411" width="320" height="49"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <color key="tintColor" red="0.180392161" green="0.53333336109999996" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
@@ -156,7 +156,7 @@
     </objects>
     <resources>
         <image name="tabbar_notes.png" width="30" height="30"/>
-        <image name="tabbar_record.png" width="36" height="30"/>
+        <image name="tabbar_record.png" width="320" height="80"/>
         <image name="tabbar_settings.png" width="30" height="30"/>
         <image name="tabbar_view.png" width="30" height="30"/>
     </resources>

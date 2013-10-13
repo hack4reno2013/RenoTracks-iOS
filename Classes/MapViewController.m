@@ -121,7 +121,7 @@
 	notesHeader.backgroundColor = [UIColor clearColor];
 	notesHeader.font			= [UIFont boldSystemFontOfSize:18.0];
 	notesHeader.opaque			= NO;
-	notesHeader.text			= @"Trip Marks";
+	notesHeader.text			= @"Trip Notes";
 	notesHeader.textColor		= [UIColor whiteColor];
 	[infoView addSubview:notesHeader];
 	
@@ -165,15 +165,15 @@
         
 		double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
 		
-		self.navigationItem.prompt = [NSString stringWithFormat:@"elapsed: %@ ~ %@",
- 									  [inputFormatter stringFromDate:outputDate],
-									  [dateFormatter stringFromDate:[trip start]]];
+//		self.navigationItem.prompt = [NSString stringWithFormat:@"elapsed: %@ ~ %@",
+// 									  [inputFormatter stringFromDate:outputDate],
+//									  [dateFormatter stringFromDate:[trip start]]];
         
-		self.title = [NSString stringWithFormat:@"%.1f mi ~ %.1f mph",
-					  [trip.distance doubleValue] / 1609.344,
-					  mph ];
+//		self.title = [NSString stringWithFormat:@"%.1f mi ~ %.1f mph",
+//					  [trip.distance doubleValue] / 1609.344,
+//					  mph ];
 		
-		//self.title = trip.purpose;
+		self.title = trip.purpose;
 		
 		// only add info view for trips with non-null notes
 		if ( ![trip.notes isEqualToString: @""] && trip.notes != NULL)

@@ -59,6 +59,13 @@
 #define kTagDetail	2
 #define kTagImage	3
 
+#define PURPOSELABEL_TAG 1
+#define DURATIONLABEL_TAG 2
+#define TIMETEXT_TAG 3
+#define CO2TEXT_TAG 4
+#define CALORYTEXT_TAG 5
+#define PURPOSEICON_TAG 6
+
 
 @interface TripCell : UITableViewCell
 {	
@@ -112,8 +119,6 @@
 
 - (void)initTripManager:(TripManager*)manager
 {
-
-    
 	self.tripManager = manager;
 }
 
@@ -230,17 +235,15 @@
 
 	// update conditionally as needed
 	
-//	if ( tripManager.dirty )
-//	{
-//		NSLog(@"dirty => refresh");
-//		[self refreshTableView];
-//		tripManager.dirty = NO;
-//	}
+	if ( tripManager.dirty )
+	{
+		NSLog(@"dirty => refresh");
+		[self refreshTableView];
+		tripManager.dirty = NO;
+	}
     
-	
-	[self refreshTableView];
-
 	[super viewWillAppear:animated];
+
 }
 
 /*
@@ -311,7 +314,7 @@
 	{
 		MapViewController *mvc = [[MapViewController alloc] initWithTrip:selectedTrip];
 		[[self navigationController] pushViewController:mvc animated:YES];
-		[mvc release];		
+		[mvc release];
 		selectedTrip = nil;
 	}
 
@@ -325,6 +328,7 @@
 	loading		= [[LoadingView loadingViewInView:self.parentViewController.view messageString:@"Loading..."] retain];
 	loading.tag = 909;
 	[self performSelectorInBackground:@selector(_recalculateDistanceForSelectedTripMap) withObject:nil];
+    
 }
 
 
@@ -354,46 +358,14 @@
 	{
 		cell = [[[TripCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier] autorelease];
 		cell.detailTextLabel.numberOfLines = 2;
-		if ( [reuseIdentifier isEqual: kCellReuseIdentifierCheck] )
-		{
-			/*
-			// add check mark
-			UIImage		*image		= [UIImage imageNamed:@"GreenCheckMark2.png"];
-			UIImageView *imageView	= [[UIImageView alloc] initWithImage:image];
-			imageView.frame = CGRectMake( kAccessoryViewX, kAccessoryViewY, image.size.width, image.size.height );
-			imageView.tag	= kTagImage;
-			//[cell.contentView addSubview:imageView];
-			cell.accessoryView = imageView;
-			 */
-		}
-		else if ( [reuseIdentifier isEqual: kCellReuseIdentifierExclamation] )
+		if ( [reuseIdentifier isEqual: kCellReuseIdentifierExclamation] )
 		{
 			// add exclamation point
 			UIImage		*image		= [UIImage imageNamed:@"failedUpload.png"];
 			UIImageView *imageView	= [[[UIImageView alloc] initWithImage:image] autorelease];
 			imageView.frame = CGRectMake( kAccessoryViewX, kAccessoryViewY, image.size.width, image.size.height );
 			imageView.tag	= kTagImage;
-			//[cell.contentView addSubview:imageView];
 			cell.accessoryView = imageView;
-		}
-		else if ( [reuseIdentifier isEqual: kCellReuseIdentifierInProgress] )
-		{
-			// prevent user from selecting the current recording in progress
-			cell.selectionStyle = UITableViewCellSelectionStyleNone; 
-			
-			// reuse existing indicator if available
-			UIActivityIndicatorView *inProgressIndicator = (UIActivityIndicatorView *)[cell viewWithTag:kTagImage];
-			if ( !inProgressIndicator )
-			{
-				// create activity indicator if needed
-				CGRect frame = CGRectMake( kAccessoryViewX + 4.0, kAccessoryViewY + 4.0, kActivityIndicatorSize, kActivityIndicatorSize );
-				inProgressIndicator = [[[UIActivityIndicatorView alloc] initWithFrame:frame] autorelease];
-				inProgressIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;		
-				[inProgressIndicator sizeToFit];
-				[inProgressIndicator startAnimating];
-				inProgressIndicator.tag	= kTagImage;
-				[cell.contentView addSubview:inProgressIndicator];
-			}
 		}
 	}
 	else
@@ -408,9 +380,135 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
-	//NSLog(@"cellForRowAtIndexPath");
+{
+    static NSString *CellIdentifier = @"tripsCell";
+    
+    UILabel *timeText, *purposeText, *durationText, *CO2Text, *CaloryText;
+    UIImage *image;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    Trip *trip = (Trip *)[trips objectAtIndex:indexPath.row];
+    
+    // check for recordingInProgress
+	Trip *recordingInProgress = [delegate getRecordingInProgress];
+    
+    
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        purposeText = [[UILabel alloc] initWithFrame:CGRectMake(10, 24, 120, 30)];
+        purposeText.tag = PURPOSELABEL_TAG;
+        [purposeText setFont:[UIFont boldSystemFontOfSize:18]];
+        [purposeText setTextColor:[UIColor blackColor]];
+        [cell.contentView addSubview:purposeText];
+        
+        durationText = [[UILabel alloc] initWithFrame:CGRectMake(140, 24, 190, 30)];
+        durationText.tag = DURATIONLABEL_TAG;
+        [durationText setFont:[UIFont systemFontOfSize:18]];
+        [durationText setTextColor:[UIColor blackColor]];
+        [cell.contentView addSubview:durationText];
+        
+        timeText = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 220, 25)];
+        timeText.tag = TIMETEXT_TAG;
+        [timeText setFont:[UIFont systemFontOfSize:15]];
+        [timeText setTextColor:[UIColor grayColor]];
+        [cell.contentView addSubview:timeText];
+        
+        CO2Text = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 190, 20)];
+        CO2Text.tag = CO2TEXT_TAG;
+        [CO2Text setFont:[UIFont systemFontOfSize:12]];
+        [CO2Text setTextColor:[UIColor grayColor]];
+        [cell.contentView addSubview:CO2Text];
+        
+        CaloryText = [[UILabel alloc] initWithFrame:CGRectMake(140, 50, 190, 20)];
+        CaloryText.tag = CALORYTEXT_TAG;
+        [CaloryText setFont:[UIFont systemFontOfSize:12]];
+        [CaloryText setTextColor:[UIColor grayColor]];
+        [cell.contentView addSubview:CaloryText];
+
+    } else {
+        
+        purposeText = (UILabel *)[cell.contentView viewWithTag:PURPOSELABEL_TAG];
+        durationText = (UILabel *)[cell.contentView viewWithTag:DURATIONLABEL_TAG];
+        timeText = (UILabel *)[cell.contentView viewWithTag:TIMETEXT_TAG];
+        CO2Text = (UILabel *)[cell.contentView viewWithTag:CO2TEXT_TAG];
+        CaloryText = (UILabel *)[cell.contentView viewWithTag:CALORYTEXT_TAG];
+    }
+    
+    // completed
+    if ( trip.uploaded )
+    {
+        
+        int index = [TripPurpose getPurposeIndex:trip.purpose];
+        NSLog(@"trip.purpose: %d => %@", index, trip.purpose);
+        
+        // add purpose icon
+        switch ( index ) {
+            case kTripPurposeCommute:
+                image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+                break;
+            case kTripPurposeSchool:
+                image = [UIImage imageNamed:kTripPurposeSchoolIcon];
+                break;
+            case kTripPurposeWork:
+                image = [UIImage imageNamed:kTripPurposeWorkIcon];
+                break;
+            case kTripPurposeExercise:
+                image = [UIImage imageNamed:kTripPurposeExerciseIcon];
+                break;
+            case kTripPurposeSocial:
+                image = [UIImage imageNamed:kTripPurposeSocialIcon];
+                break;
+            case kTripPurposeShopping:
+                image = [UIImage imageNamed:kTripPurposeShoppingIcon];
+                break;
+            case kTripPurposeErrand:
+                image = [UIImage imageNamed:kTripPurposeErrandIcon];
+                break;
+            case kTripPurposeOther:
+                image = [UIImage imageNamed:kTripPurposeOtherIcon];
+                break;
+            default:
+                image = [UIImage imageNamed:@"GreenCheckMark2.png"];
+        }
+        UIImageView *imageView	= [[[UIImageView alloc] initWithImage:image] autorelease];
+        imageView.frame			= CGRectMake( kAccessoryViewX, kAccessoryViewY, image.size.width, image.size.height );
+        imageView.tag = PURPOSEICON_TAG;
+        cell.accessoryView = imageView;
+        
+    }
+    
+    // saved but not yet uploaded
+    else if ( trip.saved )
+    {
+        cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierExclamation];
+    }
+    
+    // recording for this trip is still in progress (or just completed)
+    // NOTE: this test may break when attempting re-upload
+    else if ( trip == recordingInProgress )
+    {
+        cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierInProgress];
+    }
+    
+    // this trip was orphaned (an abandoned previous recording)
+    else
+    {
+        cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierExclamation];
+    }
+    
+    // display duration, distance as navbar prompt
+	static NSDateFormatter *inputFormatter = nil;
+	if ( inputFormatter == nil )
+		inputFormatter = [[NSDateFormatter alloc] init];
 	
+	[inputFormatter setDateFormat:@"HH:mm:ss"];
+	NSDate *fauxDate = [inputFormatter dateFromString:@"00:00:00"];
+	[inputFormatter setDateFormat:@"HH:mm:ss"];
+	NSLog(@"trip duration: %f", [trip.duration doubleValue]);
+	NSDate *outputDate = [[[NSDate alloc] initWithTimeInterval:(NSTimeInterval)[trip.duration doubleValue] sinceDate:fauxDate] autorelease];
+    
     // A date formatter for timestamp
     static NSDateFormatter *dateFormatter = nil;
     if (dateFormatter == nil) {
@@ -423,183 +521,16 @@
         timeFormatter = [[NSDateFormatter alloc] init];
         [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
     }
-	
-	Trip *trip = (Trip *)[trips objectAtIndex:indexPath.row];
-	TripCell *cell = nil;
-	
-	// check for recordingInProgress
-	Trip *recordingInProgress = [delegate getRecordingInProgress];
-	/*
-	NSLog(@"trip: %@", trip);
-	NSLog(@"recordingInProgress: %@", recordingInProgress);
-	*/
-	
-	//NSString *tripStatus = nil;
     
-    UILabel *timeText = [[[UILabel alloc] init] autorelease];
-    timeText.frame = CGRectMake( 10, 5, 220, 25);
-    [timeText setFont:[UIFont systemFontOfSize:15]];
-    [timeText setTextColor:[UIColor grayColor]];
-    
-    UILabel *purposeText = [[[UILabel alloc] init] autorelease];
-    purposeText.frame = CGRectMake( 10, 24, 120, 30);
-    [purposeText setFont:[UIFont boldSystemFontOfSize:18]];
-    [purposeText setTextColor:[UIColor blackColor]];
-    
-    UILabel *durationText = [[[UILabel alloc] init] autorelease];
-    durationText.frame = CGRectMake( 140, 24, 190, 30);
-    [durationText setFont:[UIFont systemFontOfSize:18]];
-    [durationText setTextColor:[UIColor blackColor]];
-    
-    UILabel *CO2Text = [[[UILabel alloc] init] autorelease];
-    CO2Text.frame = CGRectMake( 10, 50, 120, 20);
-    [CO2Text setFont:[UIFont systemFontOfSize:12]];
-    [CO2Text setTextColor:[UIColor grayColor]];
-    
-    UILabel *CaloryText = [[[UILabel alloc] init] autorelease];
-    CaloryText.frame = CGRectMake( 140, 50, 190, 20);
-    [CaloryText setFont:[UIFont systemFontOfSize:12]];
-    [CaloryText setTextColor:[UIColor grayColor]];
-    
-	UIImage	*image;
-    
-	// completed
-	if ( trip.uploaded )
-	{
-		cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierCheck];
-		
-		
-		// add check mark
-		// image = [UIImage imageNamed:@"GreenCheckMark2.png"];
-		
-		int index = [TripPurpose getPurposeIndex:trip.purpose];
-		NSLog(@"trip.purpose: %d => %@", index, trip.purpose);
-		//int index =0;
-		
-		// add purpose icon
-		switch ( index ) {
-			case kTripPurposeCommute:
-				image = [UIImage imageNamed:kTripPurposeCommuteIcon];
-				break;
-			case kTripPurposeSchool:
-				image = [UIImage imageNamed:kTripPurposeSchoolIcon];
-				break;
-			case kTripPurposeWork:
-				image = [UIImage imageNamed:kTripPurposeWorkIcon];
-				break;
-			case kTripPurposeExercise:
-				image = [UIImage imageNamed:kTripPurposeExerciseIcon];
-				break;
-			case kTripPurposeSocial:
-				image = [UIImage imageNamed:kTripPurposeSocialIcon];
-				break;
-			case kTripPurposeShopping:
-				image = [UIImage imageNamed:kTripPurposeShoppingIcon];
-				break;
-			case kTripPurposeErrand:
-				image = [UIImage imageNamed:kTripPurposeErrandIcon];
-				break;
-			case kTripPurposeOther:
-				image = [UIImage imageNamed:kTripPurposeOtherIcon];
-				break;
-			default:
-				image = [UIImage imageNamed:@"GreenCheckMark2.png"];
-		}
-        UIImageView *imageView	= [[[UIImageView alloc] initWithImage:image] autorelease];
-        imageView.frame			= CGRectMake( kAccessoryViewX, kAccessoryViewY, image.size.width, image.size.height );
-		
-		//[cell.contentView addSubview:imageView];
-		cell.accessoryView = imageView;
-		
-//		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@\n(trip saved & uploaded)", 
-//									 [dateFormatter stringFromDate:[trip start]]];		
-		//tripStatus = @"(trip saved & uploaded)";
-	}
-
-	// saved but not yet uploaded
-	else if ( trip.saved )
-	{
-		cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierExclamation];
-//		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@\n(saved but not uploaded)", 
-//									 [dateFormatter stringFromDate:[trip start]]];
-		//tripStatus = @"(saved but not uploaded)";
-	}
-
-	// recording for this trip is still in progress (or just completed)
-	// NOTE: this test may break when attempting re-upload
-	else if ( trip == recordingInProgress )
-	{
-		cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierInProgress];
-		/*
-		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@\n(recording in progress)", 
-									 [dateFormatter stringFromDate:[trip start]]];
-		 */
-//		[cell setDetail:[NSString stringWithFormat:@"%@\n(recording in progress)", [dateFormatter stringFromDate:[trip start]]]];
-		//tripStatus = @"(recording in progress)";
-	}
-	
-	// this trip was orphaned (an abandoned previous recording)
-	else
-	{
-		cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierExclamation];
-		//tripStatus = @"(recording interrupted)";
-	}
-
-	/*
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%.0fm, %.fs)", 
-						   trip.purpose, [trip.distance doubleValue], [trip.duration doubleValue]];
-    */
-	cell.detailTextLabel.tag	= kTagDetail;
-	cell.textLabel.tag			= kTagTitle;
-
-	/*
-	cell.textLabel.text = [NSString stringWithFormat:@"%@: %.0fm", 
-						   trip.purpose, [trip.distance doubleValue]];
-	 */
-
-    
-    
-	// display duration, distance as navbar prompt
-	static NSDateFormatter *inputFormatter = nil;
-	if ( inputFormatter == nil )
-		inputFormatter = [[NSDateFormatter alloc] init];
-	
-	[inputFormatter setDateFormat:@"HH:mm:ss"];
-	NSDate *fauxDate = [inputFormatter dateFromString:@"00:00:00"];
-	[inputFormatter setDateFormat:@"HH:mm:ss"];
-	NSLog(@"trip duration: %f", [trip.duration doubleValue]);
-	NSDate *outputDate = [[[NSDate alloc] initWithTimeInterval:(NSTimeInterval)[trip.duration doubleValue]
-													sinceDate:fauxDate] autorelease];
-	
-	//double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
-/*
-	cell.textLabel	= [NSString stringWithFormat:@"%.1f mi ~ %.1f mph ~ %@", 
-					   [trip.distance doubleValue] / 1609.344, 
-					   mph,
-					   trip.purpose
-					   ]];
-*/	
-//	cell.textLabel.text			= [NSString stringWithFormat:@"%@ at %@", [dateFormatter stringFromDate:[trip start]], [timeFormatter stringFromDate:[trip start]]];
-//	
-//	cell.detailTextLabel.text	= [NSString stringWithFormat:@"%@: %.1f mi ~ %.1f mph\nelapsed time: %@", 
-//								   trip.purpose,
-//								   [trip.distance doubleValue] / 1609.344, 
-//								   mph,
-//								   [inputFormatter stringFromDate:outputDate]
-//								   ];
-    
-    
-    cell.detailTextLabel.numberOfLines = 2;
-    
-    timeText.text = [NSString stringWithFormat:@"%@ at %@", [dateFormatter stringFromDate:[trip start]], [timeFormatter stringFromDate:[trip start]]];
-    
-    
+    //Add text to cell
     purposeText.text = [NSString stringWithFormat:@"%@", trip.purpose];
     durationText.text = [NSString stringWithFormat:@"%@",[inputFormatter stringFromDate:outputDate]];
-	
+    timeText.text = [NSString stringWithFormat:@"%@ at %@", [dateFormatter stringFromDate:[trip start]], [timeFormatter stringFromDate:[trip start]]];
     
+    //CO2 text
     CO2Text.text = [NSString stringWithFormat:@"CO2 Saved: %.1f lbs", 0.93 * [trip.distance doubleValue] / 1609.344];
     
+    //Calory text
     double calory = 49 * [trip.distance doubleValue] / 1609.344 - 1.69;
     if (calory <= 0) {
         CaloryText.text = [NSString stringWithFormat:@"Calories Burned: 0 kcal"];
@@ -607,22 +538,9 @@
     else
         CaloryText.text = [NSString stringWithFormat:@"Calories Burned: %.1f kcal", calory];
     
-    [cell.contentView addSubview:CaloryText];
-    [cell.contentView addSubview:CO2Text];
-    [cell.contentView addSubview:durationText];
-    [cell.contentView addSubview:purposeText];
-    [cell.contentView addSubview:timeText];
-    
-    cell.editingAccessoryView = cell.accessoryView;
-	/*
-	[cell.contentView setNeedsDisplay];
-	[cell.detailTextLabel setNeedsDisplay];
-	[cell.textLabel setNeedsDisplay];
-	[cell setNeedsDisplay];
-	 */
-	
     return cell;
 }
+
 
 /*
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -635,13 +553,6 @@
 {
 	NSLog(@"promptToConfirmPurpose");
 	
-	// construct purpose confirmation string
-//	NSString *purpose = nil;
-//	if ( tripManager != nil )
-//	//	purpose = [self getPurposeString:[tripManager getPurposeIndex]];
-//		purpose = tripManager.trip.purpose;
-
-	//NSString *confirm = [NSString stringWithFormat:@"This trip has not yet been uploaded. Confirm the trip's purpose to try again: %@", purpose];
 	NSString *confirm = [NSString stringWithFormat:@"This trip has not yet been uploaded. Try now?"];
 	
 	// present action sheet
@@ -784,6 +695,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
 	NSLog(@"actionSheet clickedButtonAtIndex %d", buttonIndex);
+    
 	switch ( buttonIndex )
 	{
 			/*
