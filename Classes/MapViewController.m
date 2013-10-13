@@ -113,25 +113,57 @@
 
 - (void)initInfoView
 {
+    
+    // format date as a string
+    static NSDateFormatter *dateFormatter = nil;
+    if (dateFormatter == nil) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    }
+    
+    // display trip duration
+    static NSDateFormatter *inputFormatter = nil;
+    if ( inputFormatter == nil )
+        inputFormatter = [[NSDateFormatter alloc] init];
+    
+    [inputFormatter setDateFormat:@"HH:mm:ss"];
+    NSDate *fauxDate = [inputFormatter dateFromString:@"00:00:00"];
+    [inputFormatter setDateFormat:@"HH:mm:ss"];
+    NSDate *outputDate = [[[NSDate alloc] initWithTimeInterval:(NSTimeInterval)[trip.duration doubleValue] sinceDate:fauxDate] autorelease];
+    
+    //Average Speed
+    double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
+    
+    
 	infoView					= [[UIView alloc] initWithFrame:CGRectMake(0,0,320,560)];
 	infoView.alpha				= kInfoViewAlpha;
 	infoView.backgroundColor	= [UIColor blackColor];
 	
-	UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(9,85,160,25)] autorelease];
+	UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(115,10,160,25)] autorelease];
 	notesHeader.backgroundColor = [UIColor clearColor];
 	notesHeader.font			= [UIFont boldSystemFontOfSize:18.0];
 	notesHeader.opaque			= NO;
-	notesHeader.text			= @"Trip Notes";
+	notesHeader.text			= @"Trip Details";
 	notesHeader.textColor		= [UIColor whiteColor];
 	[infoView addSubview:notesHeader];
-	
-	UITextView *notesText		= [[[UITextView alloc] initWithFrame:CGRectMake(0,110,320,200)] autorelease];
-	notesText.backgroundColor	= [UIColor clearColor];
-	notesText.editable			= NO;
-	notesText.font				= [UIFont systemFontOfSize:16.0];
-	notesText.text				= trip.notes;
-	notesText.textColor			= [UIColor whiteColor];
-	[infoView addSubview:notesText];
+    
+    UITextView *tripTime		= [[[UITextView alloc] initWithFrame:CGRectMake(0,35,320,200)] autorelease];
+	tripTime.backgroundColor	= [UIColor clearColor];
+	tripTime.editable			= NO;
+	tripTime.font				= [UIFont systemFontOfSize:16.0];
+	tripTime.text				= [NSString stringWithFormat:@"Start Time: %@ \nTime Elapsed: %@ \nDistance: %.1f mi \nAvg. Speed: %.1f mph \nNotes: %@",
+                                   [dateFormatter stringFromDate:[trip start]],
+                                   [inputFormatter stringFromDate:outputDate],
+                                   [trip.distance doubleValue] / 1609.344,
+                                   mph,
+                                   trip.notes];
+	tripTime.textColor			= [UIColor whiteColor];
+	[infoView addSubview:tripTime];
+    
+
+    
+    
     
 }
 
@@ -159,11 +191,11 @@
 			inputFormatter = [[NSDateFormatter alloc] init];
 		
 		[inputFormatter setDateFormat:@"HH:mm:ss"];
-		NSDate *fauxDate = [inputFormatter dateFromString:@"00:00:00"];
+//		NSDate *fauxDate = [inputFormatter dateFromString:@"00:00:00"];
 		[inputFormatter setDateFormat:@"HH:mm:ss"];
-		NSDate *outputDate = [[[NSDate alloc] initWithTimeInterval:(NSTimeInterval)[trip.duration doubleValue] sinceDate:fauxDate] autorelease];
+//		NSDate *outputDate = [[[NSDate alloc] initWithTimeInterval:(NSTimeInterval)[trip.duration doubleValue] sinceDate:fauxDate] autorelease];
         
-		double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
+//		double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
 		
 //		self.navigationItem.prompt = [NSString stringWithFormat:@"elapsed: %@ ~ %@",
 // 									  [inputFormatter stringFromDate:outputDate],

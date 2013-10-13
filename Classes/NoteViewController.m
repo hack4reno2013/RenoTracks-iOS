@@ -82,6 +82,17 @@
 	infoView = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,560)];
     NSInteger textLength = [note.details length];
     int row = 1+(textLength-1)/34;
+    
+    //Mark date details
+    NSDateFormatter *outputDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [outputDateFormatter setDateStyle:kCFDateFormatterLongStyle];
+    
+    NSDateFormatter *outputTimeFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [outputTimeFormatter setTimeStyle:kCFDateFormatterShortStyle];
+    
+    NSString *newDateString = [outputDateFormatter stringFromDate:note.recorded];
+    NSString *newTimeString = [outputTimeFormatter stringFromDate:note.recorded];
+    
 	if ([note.image_data length] != 0 && textLength != 0) {
         infoView.alpha = 1.0;
         infoView.backgroundColor = [UIColor blackColor];
@@ -108,7 +119,7 @@
         bgImageHeader.alpha = 0.8;
         [infoView addSubview:bgImageHeader];
         
-        UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(9,85,160,25)] autorelease];
+        UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(130,10,160,25)] autorelease];
         notesHeader.backgroundColor = [UIColor clearColor];
         notesHeader.font			= [UIFont boldSystemFontOfSize:18.0];
         notesHeader.opaque			= NO;
@@ -116,16 +127,16 @@
         notesHeader.textColor		= [UIColor whiteColor];
         [infoView addSubview:notesHeader];
         
-        UIImageView *bgImageText      = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 110, 320, 25*row+25)] autorelease];
+        UIImageView *bgImageText      = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 30, 320, 25*row+25)] autorelease];
         bgImageText.backgroundColor = [UIColor blackColor];
         bgImageText.alpha = 0.8;
         [infoView addSubview:bgImageText];
         
-        UITextView *notesText		= [[[UITextView alloc] initWithFrame:CGRectMake(0,110,320,25*row+15)] autorelease];
+        UITextView *notesText		= [[[UITextView alloc] initWithFrame:CGRectMake(0,30,320,25*row+15)] autorelease];
         notesText.backgroundColor	= [UIColor clearColor];
         notesText.editable			= NO;
         notesText.font				= [UIFont systemFontOfSize:16.0];
-        notesText.text				= note.details;
+        notesText.text				= [NSString stringWithFormat:@"Date: %@ at %@ \nNote: %@", newDateString, newTimeString, note.details];
         notesText.textColor			= [UIColor whiteColor];
         [infoView addSubview:notesText];
     }
@@ -148,7 +159,7 @@
         infoView.alpha				= kInfoViewAlpha;
         infoView.backgroundColor	= [UIColor blackColor];
         
-        UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(9,85,160,25)] autorelease];
+        UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(130,10,160,25)] autorelease];
         notesHeader.backgroundColor = [UIColor clearColor];
         notesHeader.font			= [UIFont boldSystemFontOfSize:18.0];
         notesHeader.opaque			= NO;
@@ -156,11 +167,11 @@
         notesHeader.textColor		= [UIColor whiteColor];
         [infoView addSubview:notesHeader];
         
-        UITextView *notesText		= [[[UITextView alloc] initWithFrame:CGRectMake(0,110,320,200)] autorelease];
+        UITextView *notesText		= [[[UITextView alloc] initWithFrame:CGRectMake(0,30,320,200)] autorelease];
         notesText.backgroundColor	= [UIColor clearColor];
         notesText.editable			= NO;
         notesText.font				= [UIFont systemFontOfSize:16.0];
-        notesText.text				= note.details;
+        notesText.text				= [NSString stringWithFormat:@"Date: %@ at %@ \nNote: %@", newDateString, newTimeString, note.details];
         notesText.textColor			= [UIColor whiteColor];
         [infoView addSubview:notesText];
     }
@@ -177,18 +188,18 @@
 	{
 		// format date as a string
         
-        NSDateFormatter *outputDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-        [outputDateFormatter setDateStyle:kCFDateFormatterLongStyle];
+//        NSDateFormatter *outputDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+//        [outputDateFormatter setDateStyle:kCFDateFormatterLongStyle];
+//        
+//        NSDateFormatter *outputTimeFormatter = [[[NSDateFormatter alloc] init] autorelease];
+//        [outputTimeFormatter setTimeStyle:kCFDateFormatterShortStyle];
         
-        NSDateFormatter *outputTimeFormatter = [[[NSDateFormatter alloc] init] autorelease];
-        [outputTimeFormatter setTimeStyle:kCFDateFormatterShortStyle];
-        
-        NSString *newDateString = [outputDateFormatter stringFromDate:note.recorded];
-        NSString *newTimeString = [outputTimeFormatter stringFromDate:note.recorded];
+//        NSString *newDateString = [outputDateFormatter stringFromDate:note.recorded];
+//        NSString *newTimeString = [outputTimeFormatter stringFromDate:note.recorded];
 		
-		self.navigationItem.prompt = [NSString stringWithFormat:@"%@ at %@",newDateString,newTimeString];
-        NSLog(@"NewDataString: %@", newDateString);
-        NSLog(@"NewTimeString: %@", newTimeString);
+//		self.navigationItem.prompt = [NSString stringWithFormat:@"%@ at %@",newDateString,newTimeString];
+//        NSLog(@"NewDataString: %@", newDateString);
+//        NSLog(@"NewTimeString: %@", newTimeString);
         
         NSString *title = [[[NSString alloc] init] autorelease];
         switch ([note.note_type intValue]) {

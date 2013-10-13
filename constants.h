@@ -88,7 +88,7 @@
 #define kSaveError			@"Your trip has been saved. Please try uploading again later."
 
 #define kInfoURL			@"http://renotracks.hp.af.cm/"
-#define kInstructionsURL	@"http://renotracks.hp.af.cm/www/instructions/"
+#define kInstructionsURL	@"http://renotracks.hp.af.cm/RenoTrackshelp.html"
 
 #define kSaveURL			@"http://renotracks.hp.af.cm/post/"
 
