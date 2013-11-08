@@ -40,11 +40,11 @@
 
 @required
 
-- (void)dismissSaving;
-- (void)startAnimating;
-- (void)stopAnimating;
-
-- (void)updateBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
-- (void)updateSavingMessage:(NSString *)message;
+//- (void)dismissSaving;
+//- (void)startAnimating;
+//- (void)stopAnimating;
+//
+//- (void)updateBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
+//- (void)updateSavingMessage:(NSString *)message;
 
 @end

@@ -69,9 +69,18 @@
 	
 	// layout at top of page, leaving room for translucent nav bar
 	//CGRect pickerRect = CGRectMake(	0.0, 43.0, size.width, size.height );
-	
-	CGRect pickerRect = CGRectMake(	0.0, 78.0, size.width, size.height );	
-	return pickerRect;
+    CGRect pickerRect;
+    
+	if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        CGRect pickerRect = CGRectMake(	0.0, 98.0, size.width, size.height );
+        return pickerRect;
+    }
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        CGRect pickerRect = CGRectMake(	0.0, 83.0, size.width, size.height );
+        return pickerRect;
+    }
+    return pickerRect;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

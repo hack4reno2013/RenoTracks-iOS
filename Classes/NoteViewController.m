@@ -15,6 +15,7 @@
 #import "TripPurposeDelegate.h"
 #import "Note.h"
 #import "UIImageViewResizable.h"
+#import "constants.h"
 
 #define kFudgeFactor	1.5
 #define kInfoViewAlpha	0.8
@@ -181,8 +182,15 @@
 {
     [super viewDidLoad];
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    //Navigation bar color
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setBackgroundColor:renoGreen];
+    
+   
     self.navigationController.navigationBarHidden = NO;
     self.tabBarItem.title = @"My Marks";
+
+
     
 	if ( note )
 	{
@@ -249,6 +257,7 @@
 		{
 			doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(infoAction:)];
 			
+            
 			UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
 			infoButton.showsTouchWhenHighlighted = YES;
 			[infoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];

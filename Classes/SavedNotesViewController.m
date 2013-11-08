@@ -158,6 +158,9 @@
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    //Navigation bar color
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundColor:renoGreen];
     
     //[self refreshTableView];
     

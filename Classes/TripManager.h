@@ -109,7 +109,7 @@ UITextViewDelegate>
 
 - (NSInteger)getPurposeIndex;
 
-- (void)promptForTripNotes;
+//- (void)promptForTripNotes;
 
 - (int)countUnSavedTrips;
 - (int)countUnSyncedTrips;

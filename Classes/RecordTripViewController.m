@@ -77,6 +77,7 @@
 }
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -223,6 +224,10 @@
 	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
 	
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    //Navigation bar color
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundColor:renoGreen];
+    
     self.navigationController.navigationBarHidden = YES;
 	
 	// init map region to Reno

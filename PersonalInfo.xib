@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment version="784" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -16,8 +16,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-            <color key="separatorColor" red="0.094117656349999995" green="0.49803924560000001" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
-            <color key="sectionIndexColor" red="0.094117656349999995" green="0.49803924560000001" blue="0.1176470667" alpha="1" colorSpace="deviceRGB"/>
+            <color key="separatorColor" red="0.231372565" green="0.54509806630000002" blue="0.2196078598" alpha="1" colorSpace="deviceRGB"/>
+            <color key="sectionIndexColor" red="0.231372565" green="0.54509806630000002" blue="0.2196078598" alpha="1" colorSpace="deviceRGB"/>
         </tableView>
     </objects>
 </document>

@@ -63,6 +63,11 @@
     [super viewDidLoad];
     
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    // Navigation bar color
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundColor:renoGreen];
+   
+    
 	NSLog(@"About viewDidLoad");
     //loads the instructions page everytime the app is started. good for testing.
     NSURL *url = [NSURL URLWithString:kInstructionsURL];

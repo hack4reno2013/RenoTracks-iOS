@@ -67,6 +67,7 @@
 #define PURPOSEICON_TAG 6
 
 
+
 @interface TripCell : UITableViewCell
 {	
 }
@@ -189,6 +190,9 @@
 	// Set up the buttons.
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    //Navigation bar color
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundColor:renoGreen];
 
 	
 	// check for countZeroDistanceTrips

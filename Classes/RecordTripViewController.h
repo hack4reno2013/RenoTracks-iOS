@@ -146,8 +146,8 @@
 //- (id)initWithTripManager:(TripManager*)manager;
 
 // IBAction handlers
-- (IBAction)save:(UIButton *)sender;
-- (void)save;
+//- (IBAction)save:(UIButton *)sender;
+//- (void)save;
 
 - (IBAction)start:(UIButton *)sender;
 
@@ -156,12 +156,12 @@
 
 // timer methods
 - (void)start:(UIButton *)sender;
-- (void)createCounter;
+//- (void)createCounter;
 - (void)resetCounter;
 - (void)setCounterTimeSince:(NSDate *)startDate distance:(CLLocationDistance)distance;
 - (void)updateCounter:(NSTimer *)theTimer;
 
-- (UIButton *)createSaveButton;
+//- (UIButton *)createSaveButton;
 - (UIButton *)createStartButton;
 - (UIButton *)createNoteButton;
 

@@ -76,7 +76,11 @@
     return self;
 }
 
-
+//- (void)startAnimating{}
+//- (void)updateSavingMessage:(NSString *)message{}
+//- (void)updateBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite{}
+//- (void)stopAnimating {}
+//- (void)dismissSaving{}
 
 - (void)createNote
 {
@@ -472,6 +476,7 @@
     //	[alert release];
     
 }
+
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {

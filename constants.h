@@ -92,10 +92,20 @@
 
 #define kSaveURL			@"http://renotracks.hp.af.cm/post/"
 
+//Reno Tracks Green
+#define renoGreen [UIColor colorWithRed:0.231 green:0.545 blue:0.220 alpha:1.000]
+#define plainWhite [UIColor colorWithRed:255 green:255 blue:255 alpha:1.000]
 
 #define kTripNotesPlaceholder	@"Comments"
 
 // CustomView metrics used by UIPickerViewDataSource, UIPickerViewDelegate
 #define MAIN_FONT_SIZE		18
 #define MIN_MAIN_FONT_SIZE	16
+
+// Detect iOS version
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 

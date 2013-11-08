@@ -188,11 +188,15 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-
+    //Navigation bar color
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundColor:renoGreen];
+    
+    
 	// Set up the buttons.
     // this is actually the Save button.
-    UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(done)];
-    
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(done)];
+
     //Initial Save button state is disabled. will be enabled if a change has been made to any of the fields.
 	done.enabled = NO;
 	self.navigationItem.rightBarButtonItem = done;

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C9419651825F0F600D5925A /* tabbar_instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C94195B1825F0F600D5925A /* tabbar_instructions.png */; };
+		1C9419661825F0F600D5925A /* tabbar_instructions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C94195C1825F0F600D5925A /* tabbar_instructions@2x.png */; };
+		1C9419671825F0F600D5925A /* tabbar_notes.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C94195D1825F0F600D5925A /* tabbar_notes.png */; };
+		1C9419681825F0F600D5925A /* tabbar_notes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C94195E1825F0F600D5925A /* tabbar_notes@2x.png */; };
+		1C9419691825F0F600D5925A /* tabbar_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C94195F1825F0F600D5925A /* tabbar_record.png */; };
+		1C94196A1825F0F600D5925A /* tabbar_record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419601825F0F600D5925A /* tabbar_record@2x.png */; };
+		1C94196B1825F0F600D5925A /* tabbar_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419611825F0F600D5925A /* tabbar_settings.png */; };
+		1C94196C1825F0F600D5925A /* tabbar_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419621825F0F600D5925A /* tabbar_settings@2x.png */; };
+		1C94196D1825F0F600D5925A /* tabbar_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419631825F0F600D5925A /* tabbar_view.png */; };
+		1C94196E1825F0F600D5925A /* tabbar_view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419641825F0F600D5925A /* tabbar_view@2x.png */; };
 		1D3623260D0F684500981E51 /* RenoTracksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* RenoTracksAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -141,6 +151,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C94195B1825F0F600D5925A /* tabbar_instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_instructions.png; sourceTree = "<group>"; };
+		1C94195C1825F0F600D5925A /* tabbar_instructions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_instructions@2x.png"; sourceTree = "<group>"; };
+		1C94195D1825F0F600D5925A /* tabbar_notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_notes.png; sourceTree = "<group>"; };
+		1C94195E1825F0F600D5925A /* tabbar_notes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_notes@2x.png"; sourceTree = "<group>"; };
+		1C94195F1825F0F600D5925A /* tabbar_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_record.png; sourceTree = "<group>"; };
+		1C9419601825F0F600D5925A /* tabbar_record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_record@2x.png"; sourceTree = "<group>"; };
+		1C9419611825F0F600D5925A /* tabbar_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_settings.png; sourceTree = "<group>"; };
+		1C9419621825F0F600D5925A /* tabbar_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_settings@2x.png"; sourceTree = "<group>"; };
+		1C9419631825F0F600D5925A /* tabbar_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_view.png; sourceTree = "<group>"; };
+		1C9419641825F0F600D5925A /* tabbar_view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_view@2x.png"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* RenoTracksAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenoTracksAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* RenoTracksAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenoTracksAppDelegate.m; sourceTree = "<group>"; };
@@ -397,6 +417,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1C94195A1825F0F600D5925A /* TabBarIcons */ = {
+			isa = PBXGroup;
+			children = (
+				1C94195B1825F0F600D5925A /* tabbar_instructions.png */,
+				1C94195C1825F0F600D5925A /* tabbar_instructions@2x.png */,
+				1C94195D1825F0F600D5925A /* tabbar_notes.png */,
+				1C94195E1825F0F600D5925A /* tabbar_notes@2x.png */,
+				1C94195F1825F0F600D5925A /* tabbar_record.png */,
+				1C9419601825F0F600D5925A /* tabbar_record@2x.png */,
+				1C9419611825F0F600D5925A /* tabbar_settings.png */,
+				1C9419621825F0F600D5925A /* tabbar_settings@2x.png */,
+				1C9419631825F0F600D5925A /* tabbar_view.png */,
+				1C9419641825F0F600D5925A /* tabbar_view@2x.png */,
+			);
+			path = TabBarIcons;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +462,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C94195A1825F0F600D5925A /* TabBarIcons */,
 				9D4648201604EF2F00A4F9CB /* UI Elements */,
 				9D4647FB1604EF2600A4F9CB /* TripPurposePickerIcons */,
 				9D4647A81604EBF400A4F9CB /* Button Icons */,
@@ -659,6 +697,7 @@
 				A2B263251801C8140015F89B /* noteBlankPicker.png in Resources */,
 				64C8D40311386B26008BCADE /* RecordMap.xib in Resources */,
 				9D4647B71604EBF400A4F9CB /* blueButton.png in Resources */,
+				1C9419651825F0F600D5925A /* tabbar_instructions.png in Resources */,
 				9D4647B81604EBF400A4F9CB /* blueButton@2x.png in Resources */,
 				9D4647B91604EBF400A4F9CB /* blueButtonHighlight.png in Resources */,
 				A2B263271801C8140015F89B /* noteIssueMapGlyph.png in Resources */,
@@ -669,8 +708,10 @@
 				A2B2632A1801C8140015F89B /* noteIssuePicker@2x.png in Resources */,
 				A2B263281801C8140015F89B /* noteIssueMapGlyph@2x.png in Resources */,
 				9D4647BC1604EBF400A4F9CB /* greenButton@2x.png in Resources */,
+				1C94196D1825F0F600D5925A /* tabbar_view.png in Resources */,
 				A20B63231801E5160039391D /* AppIcon60x60@2x.png in Resources */,
 				9D4647BD1604EBF400A4F9CB /* greenButtonHighlight.png in Resources */,
+				1C94196B1825F0F600D5925A /* tabbar_settings.png in Resources */,
 				9D4647BE1604EBF400A4F9CB /* greenButtonHighlight@2x.png in Resources */,
 				9D4647BF1604EBF400A4F9CB /* greyButton.png in Resources */,
 				A2B2631E1801C8140015F89B /* exercise@2x.png in Resources */,
@@ -687,6 +728,7 @@
 				A2B2632D1801C8140015F89B /* school.png in Resources */,
 				A2B2631D1801C8140015F89B /* exercise.png in Resources */,
 				A20B63331801E6800039391D /* iTunesArtwork.png in Resources */,
+				1C9419671825F0F600D5925A /* tabbar_notes.png in Resources */,
 				A2B2632B1801C8140015F89B /* other.png in Resources */,
 				A20B63161801E06A0039391D /* AppIcon57x57@2x.png in Resources */,
 				A2B263311801C8140015F89B /* social.png in Resources */,
@@ -696,12 +738,15 @@
 				A2B2631C1801C8140015F89B /* errands@2x.png in Resources */,
 				A21F08151800DCD600638A15 /* yellowButton@2x.png in Resources */,
 				9D4648261604EF2F00A4F9CB /* LCD-screen-288x126.png in Resources */,
+				1C9419681825F0F600D5925A /* tabbar_notes@2x.png in Resources */,
 				9D4648271604EF2F00A4F9CB /* lcd-screen.png in Resources */,
 				9D4648281604EF2F00A4F9CB /* lcd-screen@2x.png in Resources */,
 				A2B263321801C8140015F89B /* social@2x.png in Resources */,
 				A2B263301801C8140015F89B /* shopping@2x.png in Resources */,
+				1C94196E1825F0F600D5925A /* tabbar_view@2x.png in Resources */,
 				A20B63201801E5160039391D /* AppIcon40x40.png in Resources */,
 				A20B63241801E5160039391D /* AppIcon76x76.png in Resources */,
+				1C94196A1825F0F600D5925A /* tabbar_record@2x.png in Resources */,
 				9D4648291604EF2F00A4F9CB /* MapCoord.png in Resources */,
 				9D46482A1604EF2F00A4F9CB /* record-map-frame-288x141.png in Resources */,
 				A21F08141800DCD600638A15 /* yellowButton.png in Resources */,
@@ -712,6 +757,7 @@
 				9D3CDAD516D6F7A900F423B8 /* lcdScreen@2x.png in Resources */,
 				9D3CDAD616D6F7A900F423B8 /* photoFrame.png in Resources */,
 				9D3CDAD716D6F7A900F423B8 /* photoFrame@2x.png in Resources */,
+				1C9419661825F0F600D5925A /* tabbar_instructions@2x.png in Resources */,
 				9D3CDADE16D7041F00F423B8 /* whiteButton.png in Resources */,
 				9D3CDADF16D7041F00F423B8 /* whiteButton@2x.png in Resources */,
 				A2B2633C1801D6460015F89B /* greyButtonHighlight@2x.png in Resources */,
@@ -719,6 +765,7 @@
 				A20B63221801E5160039391D /* AppIcon60x60.png in Resources */,
 				9D3CDAE316D7056F00F423B8 /* whiteButtonHighlight@2x.png in Resources */,
 				A2B263371801C8140015F89B /* workRelated.png in Resources */,
+				1C94196C1825F0F600D5925A /* tabbar_settings@2x.png in Resources */,
 				A20B631F1801E5160039391D /* AppIcon29x29@2x.png in Resources */,
 				A2B263331801C8140015F89B /* tripEnd.png in Resources */,
 				A2B263291801C8140015F89B /* noteIssuePicker.png in Resources */,
@@ -733,6 +780,7 @@
 				A2B263191801C8140015F89B /* commute.png in Resources */,
 				A2B263361801C8140015F89B /* tripStart@2x.png in Resources */,
 				8F20B0AD16F0F08A00031712 /* TripDetailViewController.xib in Resources */,
+				1C9419691825F0F600D5925A /* tabbar_record.png in Resources */,
 				A20B632A1801E5230039391D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

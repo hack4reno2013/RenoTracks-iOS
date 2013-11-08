@@ -42,6 +42,7 @@
 #import "MapViewController.h"
 #import "Trip.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "constants.h"
 
 #define kFudgeFactor	1.5
 #define kInfoViewAlpha	0.8
@@ -106,6 +107,7 @@
 	// adjust our done/info buttons accordingly
 	if ([infoView superview] == self.view)
 		self.navigationItem.rightBarButtonItem = doneButton;
+    
 	else
 		self.navigationItem.rightBarButtonItem = flipButton;
 }
@@ -172,7 +174,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent; 
+    //Navigation bar color
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundColor:renoGreen];
+    
+    
     self.navigationController.navigationBarHidden = NO;
     
 	if ( trip )
@@ -212,6 +219,7 @@
 		{
 			doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(infoAction:)];
 			
+            
 			UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
 			infoButton.showsTouchWhenHighlighted = YES;
 			[infoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];
