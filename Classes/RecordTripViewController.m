@@ -109,11 +109,12 @@
 		//NSLog(@"center map to current user location");
 		[mapView setCenterCoordinate:newLocation.coordinate animated:YES];
 	}
-
+    
+    CLLocationDistance distance = [tripManager addCoord:newLocation];
 	if ( recording )
 	{
 		// add to CoreData store
-		CLLocationDistance distance = [tripManager addCoord:newLocation];
+		//CLLocationDistance distance = [tripManager addCoord:newLocation];
 		self.distCounter.text = [NSString stringWithFormat:@"%.1f", distance / 1609.344];
 	}
 	
@@ -122,6 +123,17 @@
 		speedCounter.text = [NSString stringWithFormat:@"%.1f", newLocation.speed * 3600 / 1609.344];
 	else
 		speedCounter.text = @"0.0";
+    
+    //Calory text
+    double calory = 49 * distance / 1609.344 - 1.69;
+    if (calory <= 0) {
+        calorieCount.text = [NSString stringWithFormat:@"Calories Burned: 0 kcal"];
+    }
+    else
+        calorieCount.text = [NSString stringWithFormat:@"Calories Burned: %.1f kcal", calory];
+    
+    //CO2 text
+    C02Count.text = [NSString stringWithFormat:@"CO2 Saved: %.1f lbs", 0.93 * distance / 1609.344];
 }
 
 
@@ -966,6 +978,8 @@ shouldSelectViewController:(UIViewController *)viewController
     [managedObjectContext release];
     [mapView release];
     
+    [calorieCount release];
+    [C02Count release];
     [super dealloc];
 }
 

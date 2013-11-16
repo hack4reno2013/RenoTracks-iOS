@@ -17,6 +17,7 @@
 		1C94196C1825F0F600D5925A /* tabbar_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419621825F0F600D5925A /* tabbar_settings@2x.png */; };
 		1C94196D1825F0F600D5925A /* tabbar_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419631825F0F600D5925A /* tabbar_view.png */; };
 		1C94196E1825F0F600D5925A /* tabbar_view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419641825F0F600D5925A /* tabbar_view@2x.png */; };
+		1CCF0DC0183809390047129B /* tabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CCF0DBF183809390047129B /* tabBarSelected.png */; };
 		1D3623260D0F684500981E51 /* RenoTracksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* RenoTracksAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -161,6 +162,7 @@
 		1C9419621825F0F600D5925A /* tabbar_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_settings@2x.png"; sourceTree = "<group>"; };
 		1C9419631825F0F600D5925A /* tabbar_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_view.png; sourceTree = "<group>"; };
 		1C9419641825F0F600D5925A /* tabbar_view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_view@2x.png"; sourceTree = "<group>"; };
+		1CCF0DBF183809390047129B /* tabBarSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarSelected.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* RenoTracksAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenoTracksAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* RenoTracksAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenoTracksAppDelegate.m; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 		1C94195A1825F0F600D5925A /* TabBarIcons */ = {
 			isa = PBXGroup;
 			children = (
+				1CCF0DBF183809390047129B /* tabBarSelected.png */,
 				1C94195B1825F0F600D5925A /* tabbar_instructions.png */,
 				1C94195C1825F0F600D5925A /* tabbar_instructions@2x.png */,
 				1C94195D1825F0F600D5925A /* tabbar_notes.png */,
@@ -724,6 +727,7 @@
 				9D4647C31604EBF400A4F9CB /* redButtonHighlight.png in Resources */,
 				A20B63341801E6800039391D /* iTunesArtwork@2x.png in Resources */,
 				9D4647C41604EBF400A4F9CB /* redButtonHighlight@2x.png in Resources */,
+				1CCF0DC0183809390047129B /* tabBarSelected.png in Resources */,
 				A2B2632C1801C8140015F89B /* other@2x.png in Resources */,
 				A2B2632D1801C8140015F89B /* school.png in Resources */,
 				A2B2631D1801C8140015F89B /* exercise.png in Resources */,

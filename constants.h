@@ -95,6 +95,7 @@
 //Reno Tracks Green
 #define renoGreen [UIColor colorWithRed:0.231 green:0.545 blue:0.220 alpha:1.000]
 #define plainWhite [UIColor colorWithRed:255 green:255 blue:255 alpha:1.000]
+#define unSelected [UIColor colorWithRed:207 green:207 blue:207 alpha:1.000]
 
 #define kTripNotesPlaceholder	@"Comments"
 

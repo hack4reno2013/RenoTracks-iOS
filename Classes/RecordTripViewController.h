@@ -82,6 +82,8 @@
 	IBOutlet UILabel *timeCounter;
 	IBOutlet UILabel *distCounter;
 	IBOutlet UILabel *speedCounter;
+    IBOutlet UILabel *calorieCount;
+    IBOutlet UILabel *C02Count;
     UIActionSheet *saveActionSheet;
 
 

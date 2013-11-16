@@ -69,32 +69,64 @@
 	// disable screen lock
 	//[UIApplication sharedApplication].idleTimerDisabled = NO;
 	//[UIApplication sharedApplication].idleTimerDisabled = YES;
-	
-	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
+ 
+    UITabBar *tabBar = tabBarController.tabBar;
+    //set TabBarColor
+    //[[UITabBar appearance] setBarTintColor:renoGreen];
+    tabBarController.tabBar.translucent = false;
+    
+    // set color of selected icons and text to white
+    //tabBar.tintColor = plainWhite;
+    //[[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: plainWhite, NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    
+    // set color of unselected text to light grey
+    //[[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: unSelected, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    
+    // set selected and unselected icons
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
+    // set unslected icons to default color of .png
+    tabBarItem1.image = [[UIImage imageNamed:@"tabbar_record.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem2.image = [[UIImage imageNamed:@"tabbar_view.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem3.image = [[UIImage imageNamed:@"tabbar_notes.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem4.image = [[UIImage imageNamed:@"tabbar_settings.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //set selected icons to tabBar.tintColor
+//    tabBarItem1.selectedImage = [UIImage imageNamed:@"tabbar_record.png"];
+//    tabBarItem2.selectedImage = [UIImage imageNamed:@"tabbar_view.png"];
+//    tabBarItem3.selectedImage = [UIImage imageNamed:@"tabbar_notes.png"];
+//    tabBarItem4.selectedImage = [UIImage imageNamed:@"tabbar_settings.png"];
+    
+    tabBarItem1.title = @"Record";
+    tabBarItem2.title = @"Trips";
+    tabBarItem3.title = @"Marks";
+    tabBarItem4.title = @"Settings";
+
+    
+	//[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
     
     if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
         [[UINavigationBar appearance] setTintColor:renoGreen];
         [[UITabBar appearance] setTintColor:renoGreen];
     }
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        [[UINavigationBar appearance] setTintColor:plainWhite];
-        [[UITabBar appearance] setTintColor:plainWhite];
+        //[[UINavigationBar appearance] setTintColor:plainWhite];
+        //[[UITabBar appearance] setTintColor:plainWhite];
         [[UITabBar appearance] setBarTintColor:renoGreen];
-        [[UITabBar appearance] setSelectedImageTintColor:plainWhite];
-        
-//        self.tabBar.tintColor = [UIColor redColor];
-//        [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor redColor], UITextAttributeTextColor, nil] forState:UIControlStateSelected];
-
-
+        //[[UITabBar appearance] setSelectedImageTintColor:plainWhite];
         [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:plainWhite, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
-//        UITabBarItem *item0 = [self.tabBar.items objectAtIndex:0];
+        
+        [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabBarSelected.png"]];
+        
+//        UIImage *selectionIndicatorImage = [[UIImage imageNamed:@"tabBarSelected.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 0, 0, 0)];
+//        
+//        [[UITabBar appearance] setSelectionIndicatorImage:selectionIndicatorImage];
+
+
+
     }
-    
 
-
-
-
-    
     NSManagedObjectContext *context = [self managedObjectContext];
     if (!context) {
         // Handle the error.
@@ -106,42 +138,6 @@
 	// initialize trip manager with the managed object context
 	TripManager *tripManager = [[[TripManager alloc] initWithManagedObjectContext:context] autorelease];
     NoteManager *noteManager = [[[NoteManager alloc] initWithManagedObjectContext:context] autorelease];
-	
-	
-
-//	 // initialize each tab's root view controller with the trip manager
-//	 RecordTripViewController *recordTripViewController = [[[RecordTripViewController alloc]
-//	 initWithTripManager:manager]
-//	 autorelease];
-//	 
-//	 // create tab bar items for the tabs themselves
-//	 UIImage *image = [UIImage imageNamed:@"tabbar_record.png"];
-//	 UITabBarItem *recordTab = [[UITabBarItem alloc] initWithTitle:@"Record New Trip" image:image tag:101];
-//	 recordTripViewController.tabBarItem = recordTab;
-//	 
-//	 SavedTripsViewController *savedTripsViewController = [[[SavedTripsViewController alloc]
-//	 initWithTripManager:manager]
-//	 autorelease];
-//	 
-//	 // RecordingInProgressDelegate
-//	 savedTripsViewController.delegate = recordTripViewController;
-//	 
-//	 image = [UIImage imageNamed:@"tabbar_view.png"];
-//	 UITabBarItem *viewTab = [[UITabBarItem alloc] initWithTitle:@"View Saved Trips" image:image tag:102];
-//	 savedTripsViewController.tabBarItem = viewTab;
-//	 
-//	 // create a navigation controller stack for each tab, set delegates to respective root view controller
-//	 UINavigationController *recordTripNavController = [[UINavigationController alloc]
-//	 initWithRootViewController:recordTripViewController];
-//	 recordTripNavController.delegate = recordTripViewController;
-//	 recordTripNavController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-//	 
-//	 UINavigationController *savedTripsNavController = [[UINavigationController alloc]
-//	 initWithRootViewController:savedTripsViewController];
-//	 savedTripsNavController.delegate = savedTripsViewController;
-//	 savedTripsNavController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-	
-	
 	
 	UINavigationController	*recordNav	= (UINavigationController*)[tabBarController.viewControllers 
 																	objectAtIndex:0];
@@ -176,123 +172,16 @@
 															 objectAtIndex:3];
 	PersonalInfoViewController *vc	= (PersonalInfoViewController *)[nav topViewController];
 	vc.managedObjectContext			= context;
-    
-   
-    
 
-    
-    
-    
-	//create a tab bar controller and init with nav controllers above
-    //tabBarController = [[UITabBarController alloc] initWithNibName:@"MainWindow.xib" bundle:nil];
-	
-	/*
-	 tabBarController.viewControllers = [NSArray arrayWithObjects:recordTripNavController, 
-	 savedTripsNavController, 
-	 nil];
-	 
-	 // set delegate to prevent changing tabs when locked
-	 tabBarController.delegate = recordTripViewController;
-	 
-	 // set parent view so we can apply opacity mask to it
-	 recordTripViewController.parentView = tabBarController.view;
-	 //recordTripViewController.parentView = tabBarController.tabBar;
-	 */
-	
-	
-	// Add the tab bar controller's current view as a subview of the window
-    //[window addSubview:tabBarController.view];
     window.rootViewController = tabBarController;
 	[window makeKeyAndVisible];	
 }
 
-/*
-- (void)applicationDidFinishLaunching:(UIApplication *)application
-{
-	// disable screen lock
-	[UIApplication sharedApplication].idleTimerDisabled = YES;
-	
-	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
-
-    NSManagedObjectContext *context = [self managedObjectContext];
-    if (!context) {
-        // Handle the error.
-    }
-	
-	// init our unique ID hash
-	[self initUniqueIDHash];
-	
-	// initialize trip manager with the managed object context
-	TripManager *manager = [[[TripManager alloc] initWithManagedObjectContext:context] autorelease];
-
-	// initialize each tab's root view controller with the trip manager	
-	RecordTripViewController *recordTripViewController = [[[RecordTripViewController alloc]
-														   initWithTripManager:manager]
-														  autorelease];
-
-	// create tab bar items for the tabs themselves
-	UIImage *image = [UIImage imageNamed:@"tabbar_record.png"];
-	UITabBarItem *recordTab = [[UITabBarItem alloc] initWithTitle:@"Record New Trip" image:image tag:101];
-	recordTripViewController.tabBarItem = recordTab;
-	
-	SavedTripsViewController *savedTripsViewController = [[[SavedTripsViewController alloc]
-														   initWithTripManager:manager]
-														  autorelease];
-
-	savedTripsViewController.delegate = recordTripViewController;
-	
-	image = [UIImage imageNamed:@"tabbar_view.png"];
-	UITabBarItem *viewTab = [[UITabBarItem alloc] initWithTitle:@"View Saved Trips" image:image tag:102];
-	savedTripsViewController.tabBarItem = viewTab;
-	
-	// create a navigation controller stack for each tab, set delegates to respective root view controller
-	UINavigationController *recordTripNavController = [[UINavigationController alloc]
-													   initWithRootViewController:recordTripViewController];
-	recordTripNavController.delegate = recordTripViewController;
-	recordTripNavController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-
-	UINavigationController *savedTripsNavController = [[UINavigationController alloc]
-													   initWithRootViewController:savedTripsViewController];
-	savedTripsNavController.delegate = savedTripsViewController;
-	savedTripsNavController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-
-	// create a tab bar controller and init with nav controllers above
-	tabBarController = [[UITabBarController alloc] initWithNibName:@"MainWindow.xib" bundle:nil];
-	tabBarController.viewControllers = [NSArray arrayWithObjects:recordTripNavController, 
-																 savedTripsNavController, 
-																 nil];
-
-	// set delegate to prevent changing tabs when locked
-	tabBarController.delegate = recordTripViewController;
-	
-	// set parent view so we can apply opacity mask to it
-	recordTripViewController.parentView = tabBarController.view;
-	//recordTripViewController.parentView = tabBarController.tabBar;
-
-	// Add the tab bar controller's current view as a subview of the window
-    [window addSubview:tabBarController.view];
-	[window makeKeyAndVisible];	
-}
-*/
 
 - (void)initUniqueIDHash
 {
-    
 	self.uniqueIDHash = [[UIDevice currentDevice] uniqueGlobalDeviceIdentifier]; // save for later.
 	NSLog(@"Hashed uniqueID: %@", uniqueIDHash);
-	/*unsigned char result[CC_MD5_DIGEST_LENGTH];
-	const char * uniqueIDStr = [[UIDevice currentDevice].uniqueIdentifier UTF8String];
-	CC_MD5(uniqueIDStr, strlen(uniqueIDStr), result);
-	NSString *uniqueID = [NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
-						  result[0], result[1], result[2], result[3],
-						  result[4], result[5], result[6], result[7],
-						  result[8], result[9], result[10], result[11],
-						  result[12], result[13], result[14], result[15]
-						  ];
-	
-	NSLog(@"uniqueID: %@", [UIDevice currentDevice].uniqueIdentifier);	
-	NSLog(@"Hashed uniqueID: %@", uniqueID);
-	self.uniqueIDHash = uniqueID; // save for later.*/
 }
 
 
@@ -304,11 +193,6 @@
     NSError *error = nil;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-			/*
-			 Replace this implementation with code to handle the error appropriately.
-			 
-			 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-			 */
 			NSLog(@"applicationWillTerminate: Unresolved error %@, %@", error, [error userInfo]);
 			abort();
         } 
@@ -363,14 +247,6 @@
  Returns the managed object model for the application.
  If the model doesn't already exist, it is created by merging all of the models found in the application bundle.
  */
-//- (NSManagedObjectModel *)managedObjectModel {
-//	
-//    if (managedObjectModel != nil) {
-//        return managedObjectModel;
-//    }
-//    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
-//    return managedObjectModel;
-//}
 
 - (NSManagedObjectModel *)managedObjectModel {
     
@@ -407,16 +283,6 @@
     
     
     if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		 
-		 Typical reasons for an error here include:
-		 * The persistent store is not accessible
-		 * The schema for the persistent store is incompatible with current managed object model
-		 Check the error message to determine what the actual problem was.
-		 */
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
     }    
