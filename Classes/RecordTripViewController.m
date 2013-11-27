@@ -110,12 +110,22 @@
 		[mapView setCenterCoordinate:newLocation.coordinate animated:YES];
 	}
     
-    CLLocationDistance distance = [tripManager addCoord:newLocation];
 	if ( recording )
 	{
 		// add to CoreData store
-		//CLLocationDistance distance = [tripManager addCoord:newLocation];
+		CLLocationDistance distance = [tripManager addCoord:newLocation];
 		self.distCounter.text = [NSString stringWithFormat:@"%.1f", distance / 1609.344];
+        
+        //Calory text
+        double calory = 49 * distance / 1609.344 - 1.69;
+        if (calory <= 0) {
+            calorieCount.text = [NSString stringWithFormat:@"0.0"];
+        }
+        else
+            calorieCount.text = [NSString stringWithFormat:@"%.1f", calory];
+        
+        //CO2 text
+        C02Count.text = [NSString stringWithFormat:@"%.1f", 0.93 * distance / 1609.344];
 	}
 	
 	// 	double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
@@ -124,16 +134,7 @@
 	else
 		speedCounter.text = @"0.0";
     
-    //Calory text
-    double calory = 49 * distance / 1609.344 - 1.69;
-    if (calory <= 0) {
-        calorieCount.text = [NSString stringWithFormat:@"Calories Burned: 0 kcal"];
-    }
-    else
-        calorieCount.text = [NSString stringWithFormat:@"Calories Burned: %.1f kcal", calory];
     
-    //CO2 text
-    C02Count.text = [NSString stringWithFormat:@"CO2 Saved: %.1f lbs", 0.93 * distance / 1609.344];
 }
 
 
@@ -278,7 +279,6 @@
     
 	NSLog(@"save");
 }
-
 
 - (UIButton *)createNoteButton
 {
@@ -670,7 +670,7 @@
 		timeCounter.text = @"00:00:00";
 	
 	if ( distCounter != nil )
-		distCounter.text = @"0 mi";
+		distCounter.text = @"0.0";
 }
 
 
@@ -693,7 +693,7 @@
 	}
 	
 	if ( distCounter != nil )
-		distCounter.text = [NSString stringWithFormat:@"%.1f mi", distance / 1609.344];
+		distCounter.text = [NSString stringWithFormat:@"%.1f", distance / 1609.344];
 ;
 }
 
@@ -980,6 +980,7 @@ shouldSelectViewController:(UIViewController *)viewController
     
     [calorieCount release];
     [C02Count release];
+
     [super dealloc];
 }
 

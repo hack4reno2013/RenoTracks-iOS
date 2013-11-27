@@ -790,24 +790,24 @@
 
 
 // DEPRECATED
-- (void)createTrip:(unsigned int)index
-{
-	NSString *purpose = [self getPurposeString:index];
-	NSLog(@"createTrip: %@", purpose);
-	
-	// Create and configure a new instance of the Trip entity
-	trip = (Trip *)[[NSEntityDescription insertNewObjectForEntityForName:@"Trip" 
-												  inManagedObjectContext:managedObjectContext] retain];
-	
-	[trip setPurpose:purpose];
-	[trip setStart:[NSDate date]];
-	
-	NSError *error;
-	if (![managedObjectContext save:&error]) {
-		// Handle the error.
-		NSLog(@"createTrip error %@, %@", error, [error localizedDescription]);
-	}
-}
+//- (void)createTrip:(unsigned int)index
+//{
+//	NSString *purpose = [self getPurposeString:index];
+//	NSLog(@"createTrip: %@", purpose);
+//	
+//	// Create and configure a new instance of the Trip entity
+//	trip = (Trip *)[[NSEntityDescription insertNewObjectForEntityForName:@"Trip" 
+//												  inManagedObjectContext:managedObjectContext] retain];
+//	
+//	[trip setPurpose:purpose];
+//	[trip setStart:[NSDate date]];
+//	
+//	NSError *error;
+//	if (![managedObjectContext save:&error]) {
+//		// Handle the error.
+//		NSLog(@"createTrip error %@, %@", error, [error localizedDescription]);
+//	}
+//}
 
 
 //- (void)promptForTripNotes

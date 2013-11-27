@@ -137,6 +137,19 @@
     //Average Speed
     double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
     
+    //Calory text
+    double calory = 49 * [trip.distance doubleValue] / 1609.344 - 1.69;
+    NSString *Calorytext = [NSString stringWithFormat:@"kcal"];
+    if (calory <= 0) {
+        Calorytext = [NSString stringWithFormat:@"0 kcal"];
+    }
+    else{
+        Calorytext = [NSString stringWithFormat:@"%.1f kcal", calory];
+    }
+    
+    //CO2 text
+    NSString *CO2Text = [NSString stringWithFormat:@"%.1f lbs", 0.93 * [trip.distance doubleValue] / 1609.344];
+    
     
 	infoView					= [[UIView alloc] initWithFrame:CGRectMake(0,0,320,560)];
 	infoView.alpha				= kInfoViewAlpha;
@@ -154,11 +167,11 @@
 	tripTime.backgroundColor	= [UIColor clearColor];
 	tripTime.editable			= NO;
 	tripTime.font				= [UIFont systemFontOfSize:16.0];
-	tripTime.text				= [NSString stringWithFormat:@"Start Time: %@ \nTime Elapsed: %@ \nDistance: %.1f mi \nAvg. Speed: %.1f mph \nNotes: %@",
+	tripTime.text				= [NSString stringWithFormat:@"Start Time: %@ \nTime Elapsed: %@ \nDistance: %.1f mi \nAvg. Speed: %.1f mph \nEstimated Calories Burned: %@ \nCO2 Emissions Reduced: %@ \nNotes: %@",
                                    [dateFormatter stringFromDate:[trip start]],
                                    [inputFormatter stringFromDate:outputDate],
                                    [trip.distance doubleValue] / 1609.344,
-                                   mph,
+                                   mph,Calorytext,CO2Text,
                                    trip.notes];
 	tripTime.textColor			= [UIColor whiteColor];
 	[infoView addSubview:tripTime];
@@ -200,18 +213,7 @@
 		[inputFormatter setDateFormat:@"HH:mm:ss"];
 //		NSDate *fauxDate = [inputFormatter dateFromString:@"00:00:00"];
 		[inputFormatter setDateFormat:@"HH:mm:ss"];
-//		NSDate *outputDate = [[[NSDate alloc] initWithTimeInterval:(NSTimeInterval)[trip.duration doubleValue] sinceDate:fauxDate] autorelease];
-        
-//		double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
-		
-//		self.navigationItem.prompt = [NSString stringWithFormat:@"elapsed: %@ ~ %@",
-// 									  [inputFormatter stringFromDate:outputDate],
-//									  [dateFormatter stringFromDate:[trip start]]];
-        
-//		self.title = [NSString stringWithFormat:@"%.1f mi ~ %.1f mph",
-//					  [trip.distance doubleValue] / 1609.344,
-//					  mph ];
-		
+
 		self.title = trip.purpose;
 		
 		// only add info view for trips with non-null notes
@@ -228,14 +230,6 @@
 			
 			[self initInfoView];
 		}
-        
-		// sort coords by recorded date
-		/*
-         NSSortDescriptor *dateDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"recorded"
-         ascending:YES] autorelease];
-         NSArray *sortDescriptors = [NSArray arrayWithObjects:dateDescriptor, nil];
-         NSArray *sortedCoords = [[trip.coords allObjects] sortedArrayUsingDescriptors:sortDescriptors];
-         */
 		
 		// filter coords by hAccuracy
 		NSPredicate *filterByAccuracy	= [NSPredicate predicateWithFormat:@"hAccuracy < 100.0"];

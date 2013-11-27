@@ -78,13 +78,14 @@
 	IBOutlet UIButton *saveButton;
 	IBOutlet UIButton *startButton;
     IBOutlet UIButton *noteButton;
-	
+    
 	IBOutlet UILabel *timeCounter;
 	IBOutlet UILabel *distCounter;
 	IBOutlet UILabel *speedCounter;
     IBOutlet UILabel *calorieCount;
     IBOutlet UILabel *C02Count;
     UIActionSheet *saveActionSheet;
+    
 
 
 	NSTimer *timer;
@@ -121,7 +122,6 @@
 @property (nonatomic, retain) UILabel *timeCounter;
 @property (nonatomic, retain) UILabel *distCounter;
 @property (nonatomic, retain) UIActionSheet *saveActionSheet;
-
 
 @property (assign) NSTimer *timer;
 

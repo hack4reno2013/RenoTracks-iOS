@@ -31,15 +31,6 @@
 @synthesize doneButton, flipButton, infoView, note;
 @synthesize delegate;
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
-
 - (id)initWithNote:(Note *)_note
 {
 	if (self = [super initWithNibName:@"NoteViewController" bundle:nil]) {
@@ -104,12 +95,6 @@
         
         noteImageResize.image= [UIImage imageWithData:note.image_data];
         noteImageResize.contentMode = UIViewContentModeScaleAspectFill;
-        
-//        [noteImageResize applyGestures];
-        
-//        UIImageView *noteImage      = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 427)];
-//        noteImage.image= [UIImage imageWithData:note.image_data];
-//        noteImage.contentMode = UIViewContentModeScaleAspectFill;
         
         [scrollView addSubview:noteImageResize];
         
@@ -194,20 +179,6 @@
     
 	if ( note )
 	{
-		// format date as a string
-        
-//        NSDateFormatter *outputDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-//        [outputDateFormatter setDateStyle:kCFDateFormatterLongStyle];
-//        
-//        NSDateFormatter *outputTimeFormatter = [[[NSDateFormatter alloc] init] autorelease];
-//        [outputTimeFormatter setTimeStyle:kCFDateFormatterShortStyle];
-        
-//        NSString *newDateString = [outputDateFormatter stringFromDate:note.recorded];
-//        NSString *newTimeString = [outputTimeFormatter stringFromDate:note.recorded];
-		
-//		self.navigationItem.prompt = [NSString stringWithFormat:@"%@ at %@",newDateString,newTimeString];
-//        NSLog(@"NewDataString: %@", newDateString);
-//        NSLog(@"NewTimeString: %@", newTimeString);
         
         NSString *title = [[[NSString alloc] init] autorelease];
         switch ([note.note_type intValue]) {
@@ -283,7 +254,7 @@
         
     }
     else{
-        MKCoordinateRegion region = { { 33.749038, -84.388068 }, { 0.10825, 0.10825 } };
+        MKCoordinateRegion region = { { 39.519933, -119.78964 }, { 0.10825, 0.10825 } };
 		[noteView setRegion:region animated:NO];
     }
     
@@ -387,25 +358,6 @@ UIImage *shrinkImage1(UIImage *original, CGSize size) {
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation
 {
 
-//    // Try to dequeue an existing pin view first.
-//    MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView
-//                                                          dequeueReusableAnnotationViewWithIdentifier:@"LastCoord"];
-//    
-//    if ( !pinView )
-//    {
-//        // If an existing pin view was not available, create one
-//        pinView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"LastCoord"]
-//                   autorelease];
-//        
-//        pinView.animatesDrop = YES;
-//        pinView.canShowCallout = YES;
-//        pinView.pinColor = MKPinAnnotationColorRed;
-//    }
-//    
-//    annotationView = pinView;
-    
-    
-    
     MKAnnotationView *noteAnnotation = (MKAnnotationView*)[noteView dequeueReusableAnnotationViewWithIdentifier:@"notePin"];
     
     if (!noteAnnotation)

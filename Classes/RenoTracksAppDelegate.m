@@ -111,7 +111,7 @@
         [[UITabBar appearance] setTintColor:renoGreen];
     }
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        //[[UINavigationBar appearance] setTintColor:plainWhite];
+        [[UINavigationBar appearance] setTintColor:plainWhite];
         //[[UITabBar appearance] setTintColor:plainWhite];
         [[UITabBar appearance] setBarTintColor:renoGreen];
         //[[UITabBar appearance] setSelectedImageTintColor:plainWhite];

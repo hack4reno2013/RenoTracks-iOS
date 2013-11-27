@@ -87,10 +87,10 @@
 #define kSaveAccepted		@"Your trip has already been uploaded. Thank you."
 #define kSaveError			@"Your trip has been saved. Please try uploading again later."
 
-#define kInfoURL			@"http://renotracks.hp.af.cm/"
-#define kInstructionsURL	@"http://renotracks.hp.af.cm/RenoTrackshelp.html"
+#define kInfoURL			@"http://renotracks.nevadabike.org/"
+#define kInstructionsURL	@"http://renotracks.nevadabike.org/RenoTrackshelp.html"
 
-#define kSaveURL			@"http://renotracks.hp.af.cm/post/"
+#define kSaveURL			@"http://renotracks.nevadabike.org/post/"
 
 //Reno Tracks Green
 #define renoGreen [UIColor colorWithRed:0.231 green:0.545 blue:0.220 alpha:1.000]

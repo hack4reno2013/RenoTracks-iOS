@@ -121,7 +121,7 @@
 	textField.borderStyle = UITextBorderStyleRoundedRect;
 	textField.textAlignment = NSTextAlignmentRight;
 	textField.placeholder = @"12345";
-	textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+	textField.keyboardType = UIKeyboardTypeNumberPad;
 	textField.returnKeyType = UIReturnKeyDone;
 	textField.delegate = self;
 	return textField;
@@ -768,58 +768,6 @@
 		}
             break;
             
-//        case 5:
-//		{
-//			static NSString *CellIdentifier = @"CellTextField";
-//			cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//			if (cell == nil) {
-//				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//			}
-//            
-//			// inner switch statement identifies row
-//			switch ([indexPath indexAtPosition:1])
-//			{
-//				case 0:
-//                    cell.textLabel.text = @"Getting started with Reno Tracks";
-//					break;
-//			}
-//			
-//			cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//		}
-            
-//		case 2:
-//		{
-//			static NSString *CellIdentifier = @"CellCheckmark";
-//			cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//			if (cell == nil) {
-//				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//			}
-//			
-//			switch ([indexPath indexAtPosition:1])
-//			{
-//				case 0:
-//					cell.textLabel.text = @"Less than once a month";
-//					break;
-//				case 1:
-//					cell.textLabel.text = @"Several times per month";
-//					break;
-//				case 2:
-//					cell.textLabel.text = @"Several times per week";
-//					break;
-//				case 3:
-//					cell.textLabel.text = @"Daily";
-//					break;
-//			}
-//			/*
-//			if ( user != nil )
-//				if ( [user.cyclingFreq intValue] == [indexPath indexAtPosition:1] )
-//					cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//			 */
-//			if ( [cyclingFreq intValue] == [indexPath indexAtPosition:1] )
-//				cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//			else
-//				cell.accessoryType = UITableViewCellAccessoryNone;
-//		}
 	}
 	
 	// debug
@@ -915,29 +863,6 @@
 			}
 			break;
 		}
-		
-//		case 2:
-//		{
-//			// cycling frequency
-//			// remove all checkmarks
-//			UITableViewCell *cell;
-//			cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-//			cell.accessoryType = UITableViewCellAccessoryNone;
-//			cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]];
-//			cell.accessoryType = UITableViewCellAccessoryNone;
-//			cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]];
-//			cell.accessoryType = UITableViewCellAccessoryNone;
-//			cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:2]];
-//			cell.accessoryType = UITableViewCellAccessoryNone;
-//			
-//			// apply checkmark to selected cell
-//			cell = [tableView cellForRowAtIndexPath:indexPath];
-//			cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//
-//			// store cycling freq
-//			cyclingFreq = [NSNumber numberWithInt:[indexPath indexAtPosition:1]];
-//			NSLog(@"setting instance variable cycling freq: %d", [cyclingFreq intValue]);
-//		}
 	}
 }
 
