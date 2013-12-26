@@ -100,12 +100,12 @@
         
         [infoView addSubview:scrollView];
         
-        UIImageView *bgImageHeader      = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 110)] autorelease];
+        UIImageView *bgImageHeader      = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 80)] autorelease];
         bgImageHeader.backgroundColor = [UIColor blackColor];
         bgImageHeader.alpha = 0.8;
         [infoView addSubview:bgImageHeader];
         
-        UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(130,10,160,25)] autorelease];
+        UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(130,5,160,25)] autorelease];
         notesHeader.backgroundColor = [UIColor clearColor];
         notesHeader.font			= [UIFont boldSystemFontOfSize:18.0];
         notesHeader.opaque			= NO;
@@ -113,12 +113,12 @@
         notesHeader.textColor		= [UIColor whiteColor];
         [infoView addSubview:notesHeader];
         
-        UIImageView *bgImageText      = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 30, 320, 25*row+25)] autorelease];
-        bgImageText.backgroundColor = [UIColor blackColor];
-        bgImageText.alpha = 0.8;
-        [infoView addSubview:bgImageText];
+//        UIImageView *bgImageText      = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 30, 320, 25*row+25)] autorelease];
+//        bgImageText.backgroundColor = [UIColor blackColor];
+//        bgImageText.alpha = 0.8;
+//        [infoView addSubview:bgImageText];
         
-        UITextView *notesText		= [[[UITextView alloc] initWithFrame:CGRectMake(0,30,320,25*row+15)] autorelease];
+        UITextView *notesText		= [[[UITextView alloc] initWithFrame:CGRectMake(0,30,320,25*row+25)] autorelease];
         notesText.backgroundColor	= [UIColor clearColor];
         notesText.editable			= NO;
         notesText.font				= [UIFont systemFontOfSize:16.0];
@@ -145,7 +145,7 @@
         infoView.alpha				= kInfoViewAlpha;
         infoView.backgroundColor	= [UIColor blackColor];
         
-        UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(130,10,160,25)] autorelease];
+        UILabel *notesHeader		= [[[UILabel alloc] initWithFrame:CGRectMake(130,5,160,25)] autorelease];
         notesHeader.backgroundColor = [UIColor clearColor];
         notesHeader.font			= [UIFont boldSystemFontOfSize:18.0];
         notesHeader.opaque			= NO;

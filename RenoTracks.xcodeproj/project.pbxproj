@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C4134CF186CDB8200116DCA /* otherRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4134CD186CDB8200116DCA /* otherRed.png */; };
+		1C4134D0186CDB8200116DCA /* otherRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4134CE186CDB8200116DCA /* otherRed@2x.png */; };
 		1C9419651825F0F600D5925A /* tabbar_instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C94195B1825F0F600D5925A /* tabbar_instructions.png */; };
 		1C9419661825F0F600D5925A /* tabbar_instructions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C94195C1825F0F600D5925A /* tabbar_instructions@2x.png */; };
 		1C9419671825F0F600D5925A /* tabbar_notes.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C94195D1825F0F600D5925A /* tabbar_notes.png */; };
@@ -152,6 +154,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C4134CD186CDB8200116DCA /* otherRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = otherRed.png; path = TripPurposePickerIcons/otherRed.png; sourceTree = SOURCE_ROOT; };
+		1C4134CE186CDB8200116DCA /* otherRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "otherRed@2x.png"; path = "TripPurposePickerIcons/otherRed@2x.png"; sourceTree = SOURCE_ROOT; };
 		1C94195B1825F0F600D5925A /* tabbar_instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_instructions.png; sourceTree = "<group>"; };
 		1C94195C1825F0F600D5925A /* tabbar_instructions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_instructions@2x.png"; sourceTree = "<group>"; };
 		1C94195D1825F0F600D5925A /* tabbar_notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_notes.png; sourceTree = "<group>"; };
@@ -589,6 +593,8 @@
 		9D4647FB1604EF2600A4F9CB /* TripPurposePickerIcons */ = {
 			isa = PBXGroup;
 			children = (
+				1C4134CD186CDB8200116DCA /* otherRed.png */,
+				1C4134CE186CDB8200116DCA /* otherRed@2x.png */,
 				A2B262F91801C8130015F89B /* commute.png */,
 				A2B262FA1801C8130015F89B /* commute@2x.png */,
 				A2B262FB1801C8130015F89B /* errands.png */,
@@ -665,6 +671,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = J456M95AJV;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RenoTracks" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -703,6 +714,7 @@
 				1C9419651825F0F600D5925A /* tabbar_instructions.png in Resources */,
 				9D4647B81604EBF400A4F9CB /* blueButton@2x.png in Resources */,
 				9D4647B91604EBF400A4F9CB /* blueButtonHighlight.png in Resources */,
+				1C4134CF186CDB8200116DCA /* otherRed.png in Resources */,
 				A2B263271801C8140015F89B /* noteIssueMapGlyph.png in Resources */,
 				A20B63211801E5160039391D /* AppIcon40x40@2x.png in Resources */,
 				9D4647BA1604EBF400A4F9CB /* blueButtonHighlight@2x.png in Resources */,
@@ -766,6 +778,7 @@
 				9D3CDADF16D7041F00F423B8 /* whiteButton@2x.png in Resources */,
 				A2B2633C1801D6460015F89B /* greyButtonHighlight@2x.png in Resources */,
 				9D3CDAE216D7056F00F423B8 /* whiteButtonHighlight.png in Resources */,
+				1C4134D0186CDB8200116DCA /* otherRed@2x.png in Resources */,
 				A20B63221801E5160039391D /* AppIcon60x60.png in Resources */,
 				9D3CDAE316D7056F00F423B8 /* whiteButtonHighlight@2x.png in Resources */,
 				A2B263371801C8140015F89B /* workRelated.png in Resources */,
@@ -837,7 +850,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -846,7 +859,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -857,14 +870,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -887,14 +900,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -920,7 +933,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -929,7 +942,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -953,14 +966,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RenoTracks_Prefix.pch;
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;

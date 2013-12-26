@@ -307,44 +307,7 @@
 		//NSLog(@"duration = %.0fs", duration);
 		[trip setDuration:[NSNumber numberWithDouble:duration]];
 		
-		/*
-		Coord *prev = [coords objectAtIndex:0];
-		CLLocation *prevLoc = [[CLLocation alloc] initWithLatitude:[prev.latitude doubleValue] 
-														 longitude:[prev.longitude doubleValue]];
-
-		CLLocationDistance	deltaDist = [location getDistanceFrom:prevLoc];
-		NSTimeInterval		deltaTime = [location.timestamp timeIntervalSinceDate:prev.recorded];
-		
-		NSLog(@"deltaDist = %f", deltaDist);
-		NSLog(@"deltaTime = %f", deltaTime);
-		NSLog(@"est speed = %f", deltaDist / deltaTime);
-		
-		// sanity check accuracy
-		if ( [prev.hAccuracy doubleValue] < kEpsilonAccuracy && 
-			 location.horizontalAccuracy < kEpsilonAccuracy )
-		{
-			// sanity check time interval if non-zero
-			if ( !kEpsilonTimeInterval || deltaTime < kEpsilonTimeInterval )
-			{
-				// sanity check speed
-				if ( deltaDist / deltaTime < kEpsilonSpeed )
-				{
-					// consider distance delta as valid
-					distance += deltaDist;
-					dirty = YES;
-
-					NSLog(@"distance: %f", distance);
-				}
-				else
-					NSLog(@"WARNING speed exceeds epsilon: %f", deltaDist / deltaTime);
-			}
-			else
-				NSLog(@"WARNING deltaTime exceeds epsilon: %f", deltaTime);
-		}
-		else
-			NSLog(@"WARNING accuracy exceeds epsilon: %f", location.horizontalAccuracy);
-		 */
-	}
+    }
 	
 	NSError *error;
 	if (![managedObjectContext save:&error]) {
@@ -710,14 +673,6 @@
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
     
 
-//	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kConnectionError
-//													message:[error localizedDescription]
-//												   delegate:nil
-//										  cancelButtonTitle:@"OK"
-//										  otherButtonTitles:nil];
-//	[alert show];
-//	[alert release];
-    
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -787,104 +742,6 @@
 		NSLog(@"createTrip error %@, %@", error, [error localizedDescription]);
 	}
 }
-
-
-// DEPRECATED
-//- (void)createTrip:(unsigned int)index
-//{
-//	NSString *purpose = [self getPurposeString:index];
-//	NSLog(@"createTrip: %@", purpose);
-//	
-//	// Create and configure a new instance of the Trip entity
-//	trip = (Trip *)[[NSEntityDescription insertNewObjectForEntityForName:@"Trip" 
-//												  inManagedObjectContext:managedObjectContext] retain];
-//	
-//	[trip setPurpose:purpose];
-//	[trip setStart:[NSDate date]];
-//	
-//	NSError *error;
-//	if (![managedObjectContext save:&error]) {
-//		// Handle the error.
-//		NSLog(@"createTrip error %@, %@", error, [error localizedDescription]);
-//	}
-//}
-
-
-//- (void)promptForTripNotes
-//{
-//	tripNotes = [[UIAlertView alloc] initWithTitle:kTripNotesTitle
-//										   message:@"\n\n\n"
-//										  delegate:self
-//								 cancelButtonTitle:@"Skip"
-//								 otherButtonTitles:@"OK", nil];
-//
-//	[self createTripNotesText];
-//	[tripNotes addSubview:tripNotesText];
-//	[tripNotes show];
-//    [self.tripNotesText becomeFirstResponder];
-//	[tripNotes release];
-//    NSLog(@"prompt for notes");
-//}
-//
-//
-//#pragma mark UIAlertViewDelegate methods
-//
-//
-//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-//{
-//	// determine if we're processing tripNotes or saving alert
-//	if ( alertView == tripNotes )
-//	{
-//		NSLog(@"tripNotes didDismissWithButtonIndex: %d", buttonIndex);
-//		
-//		// save trip notes
-//		if ( buttonIndex == 1 )
-//		{
-//			if ( [tripNotesText.text compare:kTripNotesPlaceholder] != NSOrderedSame )
-//			{
-//				NSLog(@"saving trip notes: %@", tripNotesText.text);
-//				[self saveNotes:tripNotesText.text];
-//			}
-//		}
-//		
-//		// save / upload trip
-//        [self saveTrip];
-//
-//	}
-//	
-//	/*
-//	else // alertView == saving
-//	{
-//		NSLog(@"saving didDismissWithButtonIndex: %d", buttonIndex);
-//		
-//		// reset button states
-//		startButton.enabled = NO;
-//		saveButton.enabled = NO;
-//		lockButton.hidden = YES;
-//		
-//		// reset trip, reminder managers
-//		NSManagedObjectContext *context = tripManager.managedObjectContext;
-//		Trip *trip = tripManager.trip;
-//		[self initTripManager:[[TripManager alloc] initWithManagedObjectContext:context]];
-//		tripManager.dirty = YES;
-//		
-//		if ( reminderManager )
-//		{
-//			[reminderManager release];
-//			reminderManager = nil;
-//		}
-//		
-//		[self resetCounter];
-//		[self resetPurpose];
-//		
-//		// load map view of saved trip
-//		MapViewController *mvc = [[MapViewController alloc] initWithTrip:trip];
-//		[[self navigationController] pushViewController:mvc animated:YES];
-//		[mvc release];
-//	}
-//	 */
-//}
-
 
 #pragma mark ActivityIndicatorDelegate methods
 
@@ -1179,11 +1036,11 @@
 		return kTripPurposeSocial;
 	else if ( [string isEqualToString:kTripPurposeShoppingString] )
 		return kTripPurposeShopping;
-	else if ( [string isEqualToString:kTripPurposeErrandString] )
+    else
+//	else ( [string isEqualToString:kTripPurposeErrandString] )
 		return kTripPurposeErrand;
-	//	else if ( [string isEqualToString:kTripPurposeOtherString] )
-	else
-		return kTripPurposeOther;
+//	else
+//		return kTripPurposeRecording;
 }
 
 + (NSString *)getPurposeString:(unsigned int)index

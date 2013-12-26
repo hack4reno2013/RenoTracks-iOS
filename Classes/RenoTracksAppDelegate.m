@@ -115,7 +115,7 @@
         //[[UITabBar appearance] setTintColor:plainWhite];
         [[UITabBar appearance] setBarTintColor:renoGreen];
         //[[UITabBar appearance] setSelectedImageTintColor:plainWhite];
-        [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:plainWhite, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+        [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:plainWhite, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
         
         [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabBarSelected.png"]];
         

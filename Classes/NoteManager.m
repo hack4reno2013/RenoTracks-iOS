@@ -466,15 +466,6 @@
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
     
-    
-    //	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kConnectionError
-    //													message:[error localizedDescription]
-    //												   delegate:nil
-    //										  cancelButtonTitle:@"OK"
-    //										  otherButtonTitles:nil];
-    //	[alert show];
-    //	[alert release];
-    
 }
 
 

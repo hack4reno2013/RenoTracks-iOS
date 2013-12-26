@@ -44,6 +44,7 @@
 #define kTripPurposeShopping	5
 #define kTripPurposeErrand		6
 #define kTripPurposeOther		7
+//#define kTripPurposeRecording   8
 
 #define kTripPurposeCommuteIcon		@"commute.png"
 #define kTripPurposeSchoolIcon		@"school.png"
@@ -53,6 +54,9 @@
 #define kTripPurposeShoppingIcon	@"shopping.png"
 #define kTripPurposeErrandIcon		@"errands.png"
 #define kTripPurposeOtherIcon		@"other.png"
+#define kTripPurposeOtherRedIcon	@"otherRed.png"
+
+
 
 #define kNoteThisAsset              @"noteAssetPicker.png"
 #define kNoteThisIssue              @"noteIssuePicker.png"
@@ -66,7 +70,7 @@
 #define kTripPurposeShoppingString	@"Shopping"
 #define kTripPurposeErrandString	@"Errand"
 #define kTripPurposeOtherString		@"Other"
-
+#define kTripPurposeRecordingString @"Recording..."
 
 
 @protocol TripPurposeDelegate <NSObject>

@@ -234,7 +234,7 @@
 	NSLog(@"RecordTripViewController viewDidLoad");
     NSLog(@"Bundle ID: %@", [[NSBundle mainBundle] bundleIdentifier]);
     [super viewDidLoad];
-	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
+	//[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
 	
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     //Navigation bar color
@@ -282,16 +282,6 @@
 
 - (UIButton *)createNoteButton
 {
-//    UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
-//                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-//    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
-//                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    
-//    [noteButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-//    [noteButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-//    [noteButton setTitleColor:[[[UIColor alloc] initWithRed:185.0 / 255 green:91.0 / 255 blue:47.0 / 255 alpha:1.0 ] autorelease] forState:UIControlStateHighlighted];
-    
-//    noteButton.backgroundColor = [UIColor clearColor];
     noteButton.enabled = YES;
     
     [noteButton setTitle:@"Mark" forState:UIControlStateNormal];
@@ -405,13 +395,13 @@
 	NSLog(@"actionSheet clickedButtonAtIndex %d", buttonIndex);
 	switch ( buttonIndex )
 	{			
-           case 0:
+        case 0:
            {
-               NSLog(@"Discard!!!!");
-               [self resetRecordingInProgress];
-               //discard that trip
-               break;
-           }
+            NSLog(@"Discard!!!!");
+            [self resetRecordingInProgress];
+            //discard that trip
+            break;
+        }
         case 1:{
             [self save];
             break;
@@ -518,14 +508,14 @@
 												   userInfo:[self newTripTimerUserInfo] repeats:YES];
         }
         
-        UIImage *buttonImage = [[UIImage imageNamed:@"greyButton.png"]
+        UIImage *buttonImage = [[UIImage imageNamed:@"redButton.png"]
                                 resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-        UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greyButtonHighlight.png"]
+        UIImage *buttonImageHighlight = [[UIImage imageNamed:@"redButtonHighlight.png"]
                                          resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
 
         [startButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [startButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-        [startButton setTitleColor:[[[UIColor alloc] initWithRed:46.0 / 255 green:136.0 / 255 blue:55.0 / 255 alpha:1.0 ] autorelease] forState:UIControlStateNormal];
+        [startButton setTitleColor:plainWhite forState:UIControlStateNormal];
         [startButton setTitle:@"Save" forState:UIControlStateNormal];
         startButton.titleLabel.font = [UIFont boldSystemFontOfSize: 18];
         

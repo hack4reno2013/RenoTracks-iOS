@@ -74,35 +74,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [webView loadRequest:request];
-    //loads the instructions page once and saves it unless the app is deleted
-	//[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kInstructionsURL]]];
-    
-    /*_alreadyConsent18 = [[NSUserDefaults standardUserDefaults] boolForKey:@"alreadyConsent18"];
-    
-    if (!_alreadyConsent18) {
-        
-        [[NSUserDefaults standardUserDefaults] setBool: !_alreadyConsent18
-                                                forKey: @"alreadyConsent18"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle: kConsentFor18Title
-                                                             message: kConsentFor18Message
-                                                            delegate: self
-                                                   cancelButtonTitle: @"NO"
-                                                   otherButtonTitles: @"YES", nil]
-                                  autorelease];
-        [alertView show];
-    }*/
 }
-
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
