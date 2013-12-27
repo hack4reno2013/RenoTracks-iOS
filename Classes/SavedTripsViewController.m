@@ -529,7 +529,7 @@
     // saved but not yet uploaded
     else if ( trip.saved )
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         
         //cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierExclamation];
         
@@ -569,26 +569,6 @@
 
         purposeText.text = [NSString stringWithFormat:@"Recording..."];
         
-        //purposeText.text = [NSString stringWithFormat:@"Recording..."];
-        //[string isEqualToString:kTripPurposeCommuteString];
-        
-
-//        errorLabel.text = [NSString stringWithFormat:@"Recording"];
-        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        //cell = [self getCellWithReuseIdentifier:kCellReuseIdentifierInProgress];
-
-//        else {
-//            errorLabel = (UILabel *)[cell.contentView viewWithTag:errorLabel_TAG];
-//        }
-    
-        
-        
-
-//
-//        [cell.contentView addSubview:timeText];
-//        [cell.contentView addSubview:CO2Text];
-//        [cell.contentView addSubview:CaloryText];
-//
     }
     
     // this trip was orphaned (an abandoned previous recording)
