@@ -231,6 +231,9 @@
 
 - (void)viewDidLoad
 {
+    //Keep app from sleeping
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
 	NSLog(@"RecordTripViewController viewDidLoad");
     NSLog(@"Bundle ID: %@", [[NSBundle mainBundle] bundleIdentifier]);
     [super viewDidLoad];

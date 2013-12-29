@@ -46,7 +46,7 @@
 #define k5Minutes	300
 
 //#define kBatteryLevelThreshold	0.90
-#define kBatteryLevelThreshold	0.20
+#define kBatteryLevelThreshold	0.10
 
 //#define kEnableTestReminder		YES
 #define kEnableTestReminder		NO

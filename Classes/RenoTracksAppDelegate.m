@@ -68,7 +68,7 @@
 {
 	// disable screen lock
 	//[UIApplication sharedApplication].idleTimerDisabled = NO;
-	//[UIApplication sharedApplication].idleTimerDisabled = YES;
+	[UIApplication sharedApplication].idleTimerDisabled = YES;
  
     UITabBar *tabBar = tabBarController.tabBar;
     //set TabBarColor

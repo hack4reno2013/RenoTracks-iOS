@@ -543,6 +543,7 @@ UIImage *shrinkImage(UIImage *original, CGSize size) {
 				pinView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"FirstCoord"]
 						   autorelease];
                 pinView.image = [UIImage imageNamed:@"tripStart.png"];
+                pinView.centerOffset = CGPointMake(0,-20);
                 NSLog(@"START GLYPH");
 			}
 			
@@ -599,15 +600,16 @@ UIImage *shrinkImage(UIImage *original, CGSize size) {
         //handle 'normal' pins
         
         if([annotation.title isEqual:@"Start"]){
-            MKPinAnnotationView *annView=[[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"tripPin"] autorelease];
-            annView.image = [UIImage imageNamed:@"tripStart.png"];
-            annView.centerOffset = CGPointMake(-(annView.image.size.width/4),(annView.image.size.height/3));
-            return annView;
+            MKAnnotationView *pinView=[[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"tripPin"] autorelease];
+            pinView.image = [UIImage imageNamed:@"tripStart.png"];;
+            //annView.centerOffset = CGPointMake(-(annView.image.size.width/6),(annView.image.size.height/4));
+            pinView.centerOffset = (CGPoint){0.0f, 0.0f};
+            return pinView;            
         }else if ([annotation.title isEqual:@"End"]){
-            MKPinAnnotationView *annView=[[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"tripPin"] autorelease];
-            annView.image = [UIImage imageNamed:@"tripEnd.png"];
-            annView.centerOffset = CGPointMake(-(annView.image.size.width/4),(annView.image.size.height/3));
-            return annView;
+            MKAnnotationView *pinView=[[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"tripPin"] autorelease];
+            pinView.image = [UIImage imageNamed:@"tripEnd.png"];
+            pinView.centerOffset = (CGPoint){0.0f, 0.0f};
+            return pinView;
         }
     }
 	
@@ -617,7 +619,7 @@ UIImage *shrinkImage(UIImage *original, CGSize size) {
 - (MKOverlayView*)mapView:(MKMapView*)theMapView viewForOverlay:(id <MKOverlay>)overlay
 {
     MKPolylineView* lineView = [[[MKPolylineView alloc] initWithPolyline:self.routeLine] autorelease];
-    lineView.strokeColor = [UIColor blueColor];
+    lineView.strokeColor = renoGreen;
     lineView.lineWidth = 5;
     return lineView;
 }

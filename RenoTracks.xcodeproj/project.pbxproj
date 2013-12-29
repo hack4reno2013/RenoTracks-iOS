@@ -19,6 +19,8 @@
 		1C94196C1825F0F600D5925A /* tabbar_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419621825F0F600D5925A /* tabbar_settings@2x.png */; };
 		1C94196D1825F0F600D5925A /* tabbar_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419631825F0F600D5925A /* tabbar_view.png */; };
 		1C94196E1825F0F600D5925A /* tabbar_view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9419641825F0F600D5925A /* tabbar_view@2x.png */; };
+		1CAF1537186FE5B2004D76BA /* tripStart_r2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CAF1536186FE5B2004D76BA /* tripStart_r2.png */; };
+		1CAF153B186FE652004D76BA /* tripStart_r2@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CAF153A186FE652004D76BA /* tripStart_r2@2.png */; };
 		1CCF0DC0183809390047129B /* tabBarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CCF0DBF183809390047129B /* tabBarSelected.png */; };
 		1D3623260D0F684500981E51 /* RenoTracksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* RenoTracksAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -164,6 +166,8 @@
 		1C9419621825F0F600D5925A /* tabbar_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_settings@2x.png"; sourceTree = "<group>"; };
 		1C9419631825F0F600D5925A /* tabbar_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_view.png; sourceTree = "<group>"; };
 		1C9419641825F0F600D5925A /* tabbar_view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_view@2x.png"; sourceTree = "<group>"; };
+		1CAF1536186FE5B2004D76BA /* tripStart_r2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tripStart_r2.png; path = TripPurposePickerIcons/tripStart_r2.png; sourceTree = SOURCE_ROOT; };
+		1CAF153A186FE652004D76BA /* tripStart_r2@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tripStart_r2@2.png"; path = "TripPurposePickerIcons/tripStart_r2@2.png"; sourceTree = SOURCE_ROOT; };
 		1CCF0DBF183809390047129B /* tabBarSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarSelected.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* RenoTracksAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenoTracksAppDelegate.h; sourceTree = "<group>"; };
@@ -587,6 +591,8 @@
 		9D4647FB1604EF2600A4F9CB /* TripPurposePickerIcons */ = {
 			isa = PBXGroup;
 			children = (
+				1CAF153A186FE652004D76BA /* tripStart_r2@2.png */,
+				1CAF1536186FE5B2004D76BA /* tripStart_r2.png */,
 				1C4134CD186CDB8200116DCA /* otherRed.png */,
 				1C4134CE186CDB8200116DCA /* otherRed@2x.png */,
 				A2B262F91801C8130015F89B /* commute.png */,
@@ -715,6 +721,7 @@
 				9D4647BB1604EBF400A4F9CB /* greenButton.png in Resources */,
 				A20B632B1801E5230039391D /* Default.png in Resources */,
 				A2B2632A1801C8140015F89B /* noteIssuePicker@2x.png in Resources */,
+				1CAF1537186FE5B2004D76BA /* tripStart_r2.png in Resources */,
 				A2B263281801C8140015F89B /* noteIssueMapGlyph@2x.png in Resources */,
 				9D4647BC1604EBF400A4F9CB /* greenButton@2x.png in Resources */,
 				1C94196D1825F0F600D5925A /* tabbar_view.png in Resources */,
@@ -768,6 +775,7 @@
 				1C9419661825F0F600D5925A /* tabbar_instructions@2x.png in Resources */,
 				9D3CDADE16D7041F00F423B8 /* whiteButton.png in Resources */,
 				9D3CDADF16D7041F00F423B8 /* whiteButton@2x.png in Resources */,
+				1CAF153B186FE652004D76BA /* tripStart_r2@2.png in Resources */,
 				A2B2633C1801D6460015F89B /* greyButtonHighlight@2x.png in Resources */,
 				9D3CDAE216D7056F00F423B8 /* whiteButtonHighlight.png in Resources */,
 				1C4134D0186CDB8200116DCA /* otherRed@2x.png in Resources */,
