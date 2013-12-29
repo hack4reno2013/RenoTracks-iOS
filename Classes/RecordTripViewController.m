@@ -664,6 +664,12 @@
 	
 	if ( distCounter != nil )
 		distCounter.text = @"0.0";
+    
+    if ( calorieCount != nil)
+        calorieCount.text = @"0.0";
+    
+    if ( C02Count != nil)
+        C02Count.text = @"0.0";
 }
 
 

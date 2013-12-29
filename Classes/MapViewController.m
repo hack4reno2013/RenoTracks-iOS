@@ -604,7 +604,7 @@ UIImage *shrinkImage(UIImage *original, CGSize size) {
             pinView.image = [UIImage imageNamed:@"tripStart.png"];;
             //annView.centerOffset = CGPointMake(-(annView.image.size.width/6),(annView.image.size.height/4));
             pinView.centerOffset = (CGPoint){0.0f, 0.0f};
-            return pinView;            
+            return pinView;
         }else if ([annotation.title isEqual:@"End"]){
             MKAnnotationView *pinView=[[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"tripPin"] autorelease];
             pinView.image = [UIImage imageNamed:@"tripEnd.png"];
