@@ -842,7 +842,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brad Hellyar (9U8A8773G7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -853,7 +853,7 @@
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "803E7958-869D-4D96-8433-216B0F29D0B3";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -862,8 +862,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nevada Bicycle Coalition Inc. (J456M95AJV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nevada Bicycle Coalition Inc. (J456M95AJV)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -871,7 +871,7 @@
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "60183ADA-0EC7-4D49-8F7F-D9C32AB06D0E";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -892,8 +892,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nevada Bicycle Coalition Inc. (J456M95AJV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brad Hellyar (9U8A8773G7)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -901,8 +901,8 @@
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "803E7958-869D-4D96-8433-216B0F29D0B3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "803E7958-869D-4D96-8433-216B0F29D0B3";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -925,7 +925,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brad Hellyar (9U8A8773G7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -936,7 +936,7 @@
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "803E7958-869D-4D96-8433-216B0F29D0B3";
 				SDKROOT = iphoneos;
 			};
 			name = Beta;
@@ -958,8 +958,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nevada Bicycle Coalition Inc. (J456M95AJV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brad Hellyar (9U8A8773G7)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -967,7 +967,7 @@
 				INFOPLIST_FILE = "RenoTracks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = RenoTracks;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "60183ADA-0EC7-4D49-8F7F-D9C32AB06D0E";
 				SDKROOT = iphoneos;
 			};
 			name = "Release Beta";

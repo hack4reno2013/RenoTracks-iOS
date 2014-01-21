@@ -133,8 +133,7 @@
 		speedCounter.text = [NSString stringWithFormat:@"%.1f", newLocation.speed * 3600 / 1609.344];
 	else
 		speedCounter.text = @"0.0";
-    
-    
+
 }
 
 

@@ -127,7 +127,6 @@
 
 @property (nonatomic, retain) UIView   *parentView;
 
-
 @property (assign) BOOL recording;
 @property (assign) BOOL shouldUpdateCounter;
 @property (assign) BOOL userInfoSaved;
