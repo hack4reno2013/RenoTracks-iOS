@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+//#import <AdSupport/ASIdentifierManager.h>
 
 
 @interface UIDevice (IdentifierAddition)
+@property(nonatomic, readonly, retain) NSUUID *identifierForVendor;
+@property(nonatomic, readonly) NSUUID *advertisingIdentifier;
 
 /*
  * @method uniqueDeviceIdentifier
@@ -29,5 +32,6 @@
  */
 
 - (NSString *) uniqueGlobalDeviceIdentifier;
+
 
 @end

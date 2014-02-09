@@ -154,7 +154,7 @@
             [view release];
             
             view = [[CustomView alloc] initWithFrame:CGRectZero];
-            view.title = @"Bike parking";
+            view.title = @"Rack'em Up Bike Rack";
             //view.image = [UIImage imageNamed:kIssueNeedParkingIcon];
             [viewArray addObject:view];
             [view release];
@@ -173,7 +173,7 @@
         }
         else if (pickerCategory == 2){
             view = [[CustomView alloc] initWithFrame:CGRectZero];
-            view.title = @"Bike parking";
+            view.title = @"Rack'em Up possible rack location";
             //view.image = [UIImage imageNamed:kAssetBikeParkingIcon];
             [viewArray addObject:view];
             [view release];
@@ -240,7 +240,7 @@
             [view release];
             
             view = [[CustomView alloc] initWithFrame:CGRectZero];
-            view.title = @"Bike parking";
+            view.title = @"Rack'em Up";
             view.image = [UIImage imageNamed:kNoteThisAsset];
             [viewArray addObject:view];
             [view release];
@@ -273,7 +273,7 @@
             [view release];
             
             view = [[CustomView alloc] initWithFrame:CGRectZero];
-            view.title = @"Bike parking";
+            view.title = @"Rack'em Up";
             view.image = [UIImage imageNamed:kNoteThisIssue];
             [viewArray addObject:view];
             [view release];

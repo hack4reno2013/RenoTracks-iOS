@@ -299,7 +299,7 @@
             title = @"Enforcement";
             break;
         case 3:
-            title = @"Bike parking";
+            title = @"Rack'em Up";
             break;
         case 4:
             title = @"Bike lane issue";
@@ -308,7 +308,7 @@
             title = @"Note this issue";
             break;
         case 6:
-            title = @"Bike parking";
+            title = @"Rack'em Up";
             break;
         case 7:
             title = @"Bike shops";
